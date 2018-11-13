@@ -2,18 +2,18 @@
 // 3D array of vacation destinations
 const objDestinations = {
   urban: {
-    hot: ["Hong Kong"],
-    varying: ["London"],
-    cold: ["Harbin"]
+    hot: ["Hong Kong","Kuala Lumpur","Bangaluru"],
+    varying: ["London","Melbourne"],
+    cold: ["Harbin", "Oslo"]
   },
   suburban: {
-    hot: [],
-    varying: [],
-    cold: ["Innsbruck", "Reykjavik"]
+    hot: ["Seville","Honolulu"],
+    varying: [""],
+    cold: ["Innsbruck", "Reykjavík","Oulu"]
   },
   rural: {
-    hot: [],
-    varying: ["Óbidos"],
+    hot: ["Cayman Islands"],
+    varying: ["Óbidos","Santa Maddalena"],
     cold: ["Yellowknife"]
   }
 };
@@ -24,78 +24,88 @@ const objActivities = {
     country: "Norway",
     population: 673469,
     censusyear: 2018,
-    sightseeing: [],
-    food: []
+    sightseeing: [""],
+    food: ["food1", "food2"]
   },
   London: {
-    country: "Great Britain",
-    population: 0,
-    censusyear: 0,
-    sightseeing: [],
-    food: []
+    country: "United Kingdom",
+    population: 8825000,
+    censusyear: 2017,
+    sightseeing: [""],
+    food: ["food1", "food2"]
   },
   Paris: {
     country: "France",
-    population: 0,
-    censusyear: 0,
-    sightseeing: [],
-    food: []
+    population: 2206488,
+    censusyear: 2018,
+    sightseeing: [""],
+    food: ["food1", "food2"]
   },
-  Bangalore: {
+  Bangaluru: {
     country: "India",
     population: 12339447,
     censusyear: 2017,
-    sightseeing: [],
-    food: []
+    sightseeing: ["place1","place2"],
+    food: ["food1", "food2"]
   },
   "Hong Kong": {
     country: "China",
     population: 7448900,
     censusyear: 2018,
-    sightseeing: [],
-    food: []
+    sightseeing: [""],
+    food: ["food1", "food2"]
   },
   "San Francisco": {
     country: "USA",
-    population: 0,
-    censusyear: 0,
-    sightseeing: [],
-    food: []
+    population: 884363,
+    censusyear: 2017,
+    sightseeing: [""],
+    food: ["food1", "food2"]
   },
   Óbidos: {
     country: "Portugal",
     population: 11617,
     censusyear: 2015,
-    sightseeing: [],
-    food: []
+    sightseeing: [""],
+    food: ["ginja"]
+  },
+  Seville: {
+    country: "Spain",
+    population: 703021,
+    censusyear: 2011,
+    sightseeing: [
+      "Plaza de España",
+      "Plaza de toros de la Real Maestranza de Caballería de Sevilla - the oldest bullring in Spain"
+    ],
+    food: ["tapas"]
   },
   Reykjavík: {
     country: "Iceland",
     population: 122853,
     censusyear: 2016,
-    sightseeing: [],
-    food: []
+    sightseeing: [""],
+    food: ["food1", "food2"]
   },
   Harbin: {
     country: "China",
     population: 10635971,
     censusyear: 2010,
-    sightseeing: [],
-    food: []
+    sightseeing: [""],
+    food: ["food1", "food2"]
   },
   Innsbruck: {
     country: "Austria",
-    population: 0,
-    censusyear: 0,
-    sightseeing: [],
-    food: []
+    population: 130894,
+    censusyear: 2016,
+    sightseeing: [""],
+    food: ["food1", "food2"]
   },
   Yellowknife: {
     country: "Canada",
-    population: 0,
-    censusyear: 0,
-    sightseeing: [],
-    food: []
+    population: 19569,
+    censusyear: 2016,
+    sightseeing: ["Aurora Borealis is visible throughout winter months"],
+    food: ["food1","food2"]
   },
   Staycation: {
     country: "the safety and comfort of your own home",
@@ -108,9 +118,51 @@ const objActivities = {
       "play with your cat"
     ],
     food: [
-      "Kraft Dinner",
-      "instant noodles"
+      "Might as well microwave yourself some Kraft Dinner and call it a night.",
+      "Just go boil some water and cook some instant noodles."
     ]
+  },
+  "Cayman Islands": {
+    country: null,
+    population: 60765,
+    censusyear: 2016,
+    sightseeing: ["beaches","place2"],
+    food: ["drinks","place2"]
+  },
+  "Melbourne": {
+    country: "Australia",
+    population: 5000000,
+    censusyear: 2016,
+    sightseeing: ["place1","place2"],
+    food: ["food1","food2"]
+  },
+  "Honolulu": {
+    country: "USA",
+    population: 0,
+    censusyear: 0,
+    sightseeing: ["place1","place2"],
+    food: ["food1","food2"]
+  },
+  "Oulu": {
+    country: "",
+    population: 0,
+    censusyear: 0,
+    sightseeing: ["place1","place2"],
+    food: ["food1","food2"],
+  },
+  "Kuala Lumpur": {
+    country: "",
+    population: 0,
+    censusyear: 0,
+    sightseeing: ["place1","place2"],
+    food: ["food1","food2"],
+  },
+  "Santa Maddalena": {
+    country: "Italy",
+    population: 0,
+    censusyear: 0,
+    sightseeing: ["place1","place2"],
+    food: ["food1","food2"],
   }
 }
 
