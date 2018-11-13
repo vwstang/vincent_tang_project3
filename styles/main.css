@@ -153,3 +153,9 @@ a {
   text-decoration: none; }
 
 /*** /Initialize CSS ***/
+html {
+  font-size: 62.5%; }
+
+body {
+  font-size: 1.8rem;
+  font-family: 'Inconsolata', serif; }
