@@ -9,12 +9,12 @@ const objDestinations = {
   suburban: {
     hot: ["Seville","Honolulu"],
     varying: [""],
-    cold: ["Innsbruck", "Reykjavík","Oulu"]
+    cold: ["Innsbruck","Reykjavík","Oulu"]
   },
   rural: {
     hot: ["Cayman Islands"],
-    varying: ["Óbidos","Santa Maddalena"],
-    cold: ["Yellowknife"]
+    varying: ["Óbidos","Santa Maddalena","Stepantsminda"],
+    cold: ["Yellowknife","Shirakawa Village"]
   }
 };
 
@@ -161,6 +161,20 @@ const objActivities = {
     country: "Italy",
     population: 0,
     censusyear: 0,
+    sightseeing: ["place1","place2"],
+    food: ["food1","food2"],
+  },
+  "Stepantsminda": {
+    country: "Georgia",
+    population: 1326,
+    censusyear: 2014,
+    sightseeing: ["place1","place2"],
+    food: ["food1","food2"],
+  },
+  "Shirakawa Village": {
+    country: "Japan",
+    population: 1668,
+    censusyear: 2017,
     sightseeing: ["place1","place2"],
     food: ["food1","food2"],
   }
