@@ -17,14 +17,61 @@
   <link rel="stylesheet" href="styles/main.css?v=0.0.1">
 </head>
 <body>
-  <section class="start-here">
+  <main class="start-here">
     <h1>Where Next?</h1>
     <p>So you graduated coding school and found a job, and you don't start said job for another week or two. Luckily, you haven't run your funds dry from all the commuting back and forth and eating out during all the late night coding throughout school, and you want to go on a well deserved vacation. But wait! Where should you go?</p>
     <p>Choose one of the answers to the following questions for a suggestion for your next vacation destination!</p>
-  </section>
-  <main class="questions">
-    
   </main>
+  <form class="questions">
+    <fieldset class="pop-density"> <!-- Population Density Question -->
+      <p class="question">What kind of destinations are you interested in visiting?</p>
+      <!-- User Input: Urban -->
+      <input id="urban" value="urban" type="radio" name="density">
+      <label for="urban">Concrete jungles</label>
+      <!-- User Input: Suburban -->
+      <input id="suburban" value="suburban" type="radio" name="density">
+      <label for="suburban">Small town vibes</label>
+      <!-- User Input: Rural -->
+      <input id="rural" value="rural" type="radio" name="density">
+      <label for="rural">Cabin in the woods</label>
+      <!-- User Input: Indifferent -->
+      <input id="indifferent--density" value="indifferent" type="radio" name="density">
+      <label for="indifferent--density">It's all the same to me</label>
+    </fieldset> <!-- /Population Density Question -->
+    <fieldset class="climate"> <!-- Preferred Climate Question -->
+      <p class="question">What's the weather like there?</p>
+      <!-- User Input: Hot -->
+      <input id="hot" value="hot" type="radio" name="climate">
+      <label for="hot">If you like piña coladas!</label>
+      <!-- User Input: Varying -->
+      <input id="varying" value="varying" type="radio" name="climate">
+      <label for="varying">It's not too hot and not too cold. This one's JUUUUUUUUST right!</label>
+      <!-- User Input: Cold -->
+      <input id="cold" value="cold" type="radio" name="climate">
+      <label for="cold">Do you wanna build a snowman?</label>
+      <!-- User Input: Indifferent -->
+      <input id="indifferent--climate" value="indifferent" type="radio" name="climate">
+      <label for="indifferent--climate">Anything, I guess</label>
+    </fieldset> <!-- /Preferred Climate Question -->
+    <fieldset class="activity"> <!-- Activity Question -->
+      <p class="question">What do you feel like doing there?</p>
+      <!-- User Input: Sights -->
+      <input id="sights" value="sights" type="radio" name="activity">
+      <label for="sights">My lens are my eyes</label>
+      <!-- User Input: Food -->
+      <input id="food" value="food" type="radio" name="activity">
+      <label for="food">Epic Meal Time!</label>
+      <!-- User Input: Indifferent -->
+      <input id="indifferent--activity" value="indifferent" type="radio" name="activity">
+      <label for="indifferent--activity">Just relax and chill...</label>
+    </fieldset> <!-- /Activity Question -->
+    <fieldset>
+      <button type="submit">Submit</button>
+    </fieldset>
+  </form>
+  <section class="results">
+    <!-- Dynamic Elements Go Here -->
+  </section>
   <footer>
     <p class="disclaimer">All statistics as per Wikipedia.</p>
   </footer>

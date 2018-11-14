@@ -3,7 +3,7 @@
 const objDestinations = {
   urban: {
     hot: ["Hong Kong","Kuala Lumpur","Vientiane"],
-    varying: ["London","Perth","Stuttgart"],
+    varying: ["Brussels","Perth","Stuttgart"],
     cold: ["Harbin","Oslo","Minsk"]
   },
   suburban: {
@@ -24,29 +24,29 @@ const objActivities = {
     country: "Norway",
     population: 673469,
     censusyear: 2018,
-    sightseeing: [""],
-    food: ["food1", "food2"]
+    sightseeing: ["oslosight1","oslosight2","oslosight3"],
+    food: ["oslofood1", "oslofood2","oslofood3"]
   },
-  London: {
-    country: "United Kingdom",
-    population: 8825000,
+  Brussels: {
+    country: "Belgium",
+    population: 1191604,
     censusyear: 2017,
-    sightseeing: [""],
-    food: ["food1", "food2"]
+    sightseeing: ["brusselssight1","brusselssight2","brusselssight3"],
+    food: ["brusselsfood1","brusselsfood2","brusselsfood3"]
   },
   "Hong Kong": {
     country: "China",
     population: 7448900,
     censusyear: 2018,
-    sightseeing: [""],
-    food: ["food1", "food2"]
+    sightseeing: ["hksight1","hksight2","hksight3"],
+    food: ["hkfood1","hkfood2","hkfood3"]
   },
   Óbidos: {
     country: "Portugal",
-    population: 11617,
+    population: 3100,
     censusyear: 2015,
-    sightseeing: [""],
-    food: ["ginja"]
+    sightseeing: ["Óbidos Castle; walk the wall","obidossight2","obidossight3"],
+    food: ["Ginja"]
   },
   Seville: {
     country: "Spain",
@@ -54,7 +54,8 @@ const objActivities = {
     censusyear: 2011,
     sightseeing: [
       "Plaza de España",
-      "Plaza de toros de la Real Maestranza de Caballería de Sevilla - the oldest bullring in Spain"
+      "Real Alcázar",
+      "Catedral de Sevilla"
     ],
     food: ["tapas"]
   },
@@ -236,16 +237,23 @@ const objActivities = {
   }
 }
 
+$(function () {
+  //==-- Functions --==//
 
-//==-- Functions --==//
+  //-- Random Object Key --//
+  // Takes in an object argument and returns a string containing the name of a randomly selected key of the object.
+  const randObjKey = obj => {
+    const keys = Object.keys(obj);
+    return keys[Math.floor(Math.random() * keys.length)];
+  }
 
-//-- Random Object Key --//
-// Takes in an object argument and returns a string containing the name of a randomly selected key of the object.
-const randObjKey = obj => {
-  const keys = Object.keys(obj);
-  return keys[Math.floor(Math.random() * keys.length)];
-}
+  //-- Random Array Element --//
+  // Takes in an array argument and returns a random element within the array.
+  const randArrElem = arr => arr[Math.floor(Math.random() * arr.length)];
 
-//-- Random Array Element --//
-// Takes in an array argument and returns a random element within the array.
-const randArrElem = arr => arr[Math.floor(Math.random() * arr.length)];
+  //==-- Program --==//
+
+  
+
+
+});
