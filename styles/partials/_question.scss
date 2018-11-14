@@ -4,6 +4,9 @@
   & fieldset {
     display: flex;
     flex-direction: row;
+    margin: 0;
+    border: none;
+    padding: 0;
   }
 
   & input {
@@ -17,7 +20,7 @@
   }
 
   & label {
-    margin: 0;
-    width: 50%;
+    display: inline-block;
+    cursor: pointer;
   }
 }
