@@ -16,8 +16,9 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .wrapper {
+  width: 100%;
   padding: 20px 5%;
-  background: steelblue;
+  // background: steelblue;
 }
 
 @media (min-width: 968px) {

@@ -17,56 +17,72 @@
   <link rel="stylesheet" href="styles/main.css?v=0.0.1">
 </head>
 <body>
+  <div class="page-wrapper">
+
+  </div>
   <main class="start-here">
     <div class="wrapper">
       <h1>Where To Next?</h1>
       <p>So you graduated coding school and found a job, and you don't start said job for another week or two. Luckily, you haven't run your funds dry from all the commuting back and forth and eating out during all the late night coding throughout school, and you want to go on a well deserved vacation. But wait! Where should you go?</p>
-      <p>Choose one of the answers to the following questions for a suggestion for your next vacation destination!</p>
+      <p>In the following questions, choose the most relevant answer to you and I'll provide a suggestion to you for your next vacation destination!</p>
+      <p>Let's get started.</p>
     </div>
   </main>
   <form class="questions">
     <!-- section element used here because flexbox doesn't work with fieldset element -->
     <section class="pop-density"> <!-- Population Density Question -->
-      <legend class="question">What kind of destinations are you interested in visiting?</legend>
-      <!-- User Input: Urban -->
-      <input id="urban" value="urban" type="radio" name="density">
-      <label class="noselect" for="urban">Concrete jungles</label>
-      <!-- User Input: Suburban -->
-      <input id="suburban" value="suburban" type="radio" name="density">
-      <label class="noselect" for="suburban">Small town vibes</label>
-      <!-- User Input: Rural -->
-      <input id="rural" value="rural" type="radio" name="density">
-      <label class="noselect" for="rural">Cabin in the woods</label>
-      <!-- User Input: Indifferent -->
-      <input id="indifferent--density" value="indifferent" type="radio" name="density">
-      <label class="noselect" for="indifferent--density">It's all the same to me</label>
+      <div class="wrapper">
+          <legend class="question">What kind of destinations are you interested in visiting?</legend>
+          <div class="answer-set">
+            <!-- User Input: Urban -->
+            <input id="urban" value="urban" type="radio" name="density">
+            <label class="noselect" for="urban">Concrete jungles</label>
+            <!-- User Input: Suburban -->
+            <input id="suburban" value="suburban" type="radio" name="density">
+            <label class="noselect" for="suburban">Small town vibes</label>
+            <!-- User Input: Rural -->
+            <input id="rural" value="rural" type="radio" name="density">
+            <label class="noselect" for="rural">Cabin in the woods</label>
+            <!-- User Input: Indifferent -->
+            <input id="indifferent--density" value="indifferent" type="radio" name="density">
+            <label class="noselect" for="indifferent--density">It's all the same to me</label>
+          </div>
+      </div>
     </section> <!-- /Population Density Question -->
     <section class="climate"> <!-- Preferred Climate Question -->
-      <legend class="question">What's the weather like there?</legend>
-      <!-- User Input: Hot -->
-      <input id="hot" value="hot" type="radio" name="climate">
-      <label class="noselect" for="hot">If you like piña coladas!</label>
-      <!-- User Input: Varying -->
-      <input id="varying" value="varying" type="radio" name="climate">
-      <label class="noselect" for="varying">It's not too hot and not too cold. It's JUUUUUUUUST right!</label>
-      <!-- User Input: Cold -->
-      <input id="cold" value="cold" type="radio" name="climate">
-      <label class="noselect" for="cold">Do you wanna build a snowman?</label>
-      <!-- User Input: Indifferent -->
-      <input id="indifferent--climate" value="indifferent" type="radio" name="climate">
-      <label class="noselect" for="indifferent--climate">Anything, I guess</label>
+      <div class="wrapper">
+        <legend class="question">What's the weather like there?</legend>
+        <div class="answer-set">
+          <!-- User Input: Hot -->
+          <input id="hot" value="hot" type="radio" name="climate">
+          <label class="noselect" for="hot">If you like piña coladas!</label>
+          <!-- User Input: Varying -->
+          <input id="varying" value="varying" type="radio" name="climate">
+          <label class="noselect" for="varying">It's not too hot and not too cold. It's JUUUUUUUUST right!</label>
+          <!-- User Input: Cold -->
+          <input id="cold" value="cold" type="radio" name="climate">
+          <label class="noselect" for="cold">Do you wanna build a snowman?</label>
+          <!-- User Input: Indifferent -->
+          <input id="indifferent--climate" value="indifferent" type="radio" name="climate">
+          <label class="noselect" for="indifferent--climate">Anything, I guess</label>
+        </div>
+      </div>
     </section> <!-- /Preferred Climate Question -->
     <section class="activity"> <!-- Activity Question -->
-      <legend class="question">What do you feel like doing there?</legend>
-      <!-- User Input: Sights -->
-      <input id="sights" value="sightseeing" type="radio" name="activity">
-      <label class="noselect" for="sights">My lens are my eyes</label>
-      <!-- User Input: Food -->
-      <input id="food" value="food" type="radio" name="activity">
-      <label class="noselect" for="food">Epic Meal Time!</label>
-      <!-- User Input: Indifferent -->
-      <input id="indifferent--activity" value="indifferent" type="radio" name="activity">
-      <label class="noselect" for="indifferent--activity">Just relax and chill...</label>
+      <div class="wrapper">
+        <legend class="question">What do you feel like doing there?</legend>
+        <div class="answer-set">
+          <!-- User Input: Sights -->
+          <input id="sights" value="sightseeing" type="radio" name="activity">
+          <label class="noselect" for="sights">My lens are my eyes</label>
+          <!-- User Input: Food -->
+          <input id="food" value="food" type="radio" name="activity">
+          <label class="noselect" for="food">Epic Meal Time!</label>
+          <!-- User Input: Indifferent -->
+          <input id="indifferent--activity" value="indifferent" type="radio" name="activity">
+          <label class="noselect" for="indifferent--activity">Just relax and chill...</label>
+        </div>
+      </div>
     </section> <!-- /Activity Question -->
     <section>
       <button type="submit">Submit</button>
