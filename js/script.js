@@ -255,10 +255,22 @@ $(function () {
   $("form").on("submit", event => {
     event.preventDefault();
 
-    // Store user inputs into constants
-    const densityChoice = $("input[name=density]:checked").val();
-    const climateChoice = $("input[name=climate]:checked").val();
-    const activityChoice = $("input[name=activity]:checked").val();
+    // Store user inputs into lets
+    let densityChoice = $("input[name=density]:checked").val();
+    let climateChoice = $("input[name=climate]:checked").val();
+    let activityChoice = $("input[name=activity]:checked").val();
 
+    let resultDestination = "";
+
+    // Catch the unique "indifferent" case, otherwise randify individual "indifferent" inputs
+    if (densityChoice === "indifferent" && climateChoice === "indifferent" && activityChoice === "indifferent") {
+      // Code for staycation
+    } else {
+      resultDestinationArray = objDestinations
+        /* Object Bracket Notation with nested if shorthand - checks if densityChoice is "indifferent", then obtains a random key within objDestinations, otherwise, use user input to obtain the object corresponding to the key within objDestinations */
+        [((densityChoice === "indifferent") ? randObjKey(objDestinations) : densityChoice)]
+        [((climateChoice === "indifferent") ? randObjKey(objDestinations.urban) : climateChoice)];
+      console.log(resultDestinationArray);
+    }
   });
 });
