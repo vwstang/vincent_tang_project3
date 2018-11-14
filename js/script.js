@@ -2,19 +2,19 @@
 // 3D array of vacation destinations
 const objDestinations = {
   urban: {
-    hot: ["Hong Kong","Kuala Lumpur","Bangaluru"],
-    varying: ["London","Melbourne"],
-    cold: ["Harbin", "Oslo"]
+    hot: ["Hong Kong","Kuala Lumpur","Vientiane"],
+    varying: ["London","Perth","Stuttgart"],
+    cold: ["Harbin","Oslo","Minsk"]
   },
   suburban: {
-    hot: ["Seville","Honolulu"],
-    varying: [""],
+    hot: ["Seville","Maui","Venice"],
+    varying: ["Split","Bordeaux","Jeju Island"],
     cold: ["Innsbruck","Reykjavík","Oulu"]
   },
   rural: {
-    hot: ["Cayman Islands"],
+    hot: ["Cayman Islands","Mamanuca Islands","Sidi Bou Said"],
     varying: ["Óbidos","Santa Maddalena","Stepantsminda"],
-    cold: ["Yellowknife","Shirakawa Village"]
+    cold: ["Yellowknife","Shirakawa Village","Zermatt"]
   }
 };
 
@@ -34,31 +34,10 @@ const objActivities = {
     sightseeing: [""],
     food: ["food1", "food2"]
   },
-  Paris: {
-    country: "France",
-    population: 2206488,
-    censusyear: 2018,
-    sightseeing: [""],
-    food: ["food1", "food2"]
-  },
-  Bangaluru: {
-    country: "India",
-    population: 12339447,
-    censusyear: 2017,
-    sightseeing: ["place1","place2"],
-    food: ["food1", "food2"]
-  },
   "Hong Kong": {
     country: "China",
     population: 7448900,
     censusyear: 2018,
-    sightseeing: [""],
-    food: ["food1", "food2"]
-  },
-  "San Francisco": {
-    country: "USA",
-    population: 884363,
-    censusyear: 2017,
     sightseeing: [""],
     food: ["food1", "food2"]
   },
@@ -129,9 +108,9 @@ const objActivities = {
     sightseeing: ["beaches","place2"],
     food: ["drinks","place2"]
   },
-  "Melbourne": {
+  "Perth": {
     country: "Australia",
-    population: 5000000,
+    population: 2022044,
     censusyear: 2016,
     sightseeing: ["place1","place2"],
     food: ["food1","food2"]
@@ -175,6 +154,83 @@ const objActivities = {
     country: "Japan",
     population: 1668,
     censusyear: 2017,
+    sightseeing: ["place1","place2"],
+    food: ["food1","food2"],
+  },
+  "Split": {
+    country: "Croatia",
+    population: 178102,
+    censusyear: 2011,
+    sightseeing: ["place1","place2"],
+    food: ["food1","food2"],
+  },
+  "Mamanuca Islands": {
+    country: "Fiji",
+    population: 900,
+    censusyear: 2017,
+    sightseeing: ["place1","place2"],
+    food: ["food1","food2"],
+  },
+  "Sidi Bou Said": {
+    country: "Tunisia",
+    population: 5911,
+    censusyear: 2014,
+    sightseeing: ["place1","place2"],
+    food: ["food1","food2"],
+  },
+  "Zermatt": {
+    country: "Switzerland",
+    population: 5643,
+    censusyear: 0,
+    sightseeing: ["place1","place2"],
+    food: ["food1","food2"],
+  },
+  "Maui": {
+    country: "Hawaii, USA",
+    population: 144444,
+    censusyear: 2010,
+    sightseeing: ["place1","place2"],
+    food: ["food1","food2"],
+  },
+  "Stuttgart": {
+    country: "Germany",
+    population: 632743,
+    censusyear: 2017,
+    sightseeing: ["Porsche Museum","place2"],
+    food: ["food1","food2"],
+  },
+  "Bordeaux": {
+    country: "France",
+    population: 250776,
+    censusyear: 2016,
+    sightseeing: ["place1","place2"],
+    food: ["food1","food2"],
+  },
+  "Vientiane": {
+    country: "Laos",
+    population: 0,
+    censusyear: 0,
+    sightseeing: ["place1","place2"],
+    food: ["food1","food2"],
+  },
+  "Jeju Island": {
+    country: "South Korea",
+    population: 621550,
+    censusyear: 2014,
+    sightseeing: ["place1","place2"],
+    food: ["food1","food2"],
+  },
+  "Venice": {
+    country: "Italy",
+    population: 261905,
+    censusyear: 2017,
+    sightseeing: ["place1","place2"],
+    food: ["food1","food2"],
+  },
+  "Minsk": {
+    country: "Belarus",
+    population: 1982444,
+    censusyear: 2018,
     sightseeing: ["place1","place2"],
     food: ["food1","food2"],
   }
