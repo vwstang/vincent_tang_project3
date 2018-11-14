@@ -252,8 +252,13 @@ $(function () {
   const randArrElem = arr => arr[Math.floor(Math.random() * arr.length)];
 
   //==-- Program --==//
+  $("form").on("submit", event => {
+    event.preventDefault();
 
-  
+    // Store user inputs into constants
+    const densityChoice = $("input[name=density]:checked").val();
+    const climateChoice = $("input[name=climate]:checked").val();
+    const activityChoice = $("input[name=activity]:checked").val();
 
-
+  });
 });
