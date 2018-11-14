@@ -169,25 +169,40 @@ h1, h2, h3, h4, h5, h6 {
   -ms-user-select: none;
   user-select: none; }
 
-.questions fieldset {
+.start-here {
+  height: 100vh;
+  background: whitesmoke; }
+
+.questions section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  height: 100vh;
   margin: 0;
   border: none;
   padding: 0; }
+  .questions section.pop-density {
+    background: lightblue; }
+  .questions section.climate {
+    background: lightyellow; }
+  .questions section.activity {
+    background: lightgreen; }
 
 .questions input {
   opacity: 0;
-  position: absolute;
-  z-index: -1; }
+  height: 0;
+  width: 0; }
   .questions input:checked + label {
     color: tomato; }
 
 .questions label {
   display: inline-block;
+  border: 1px solid tomato;
   cursor: pointer; }

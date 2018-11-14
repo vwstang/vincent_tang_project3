@@ -18,13 +18,14 @@
 </head>
 <body>
   <main class="start-here">
-    <h1>Where Next?</h1>
+    <h1>Where To Next?</h1>
     <p>So you graduated coding school and found a job, and you don't start said job for another week or two. Luckily, you haven't run your funds dry from all the commuting back and forth and eating out during all the late night coding throughout school, and you want to go on a well deserved vacation. But wait! Where should you go?</p>
     <p>Choose one of the answers to the following questions for a suggestion for your next vacation destination!</p>
   </main>
   <form class="questions">
-    <fieldset class="pop-density"> <!-- Population Density Question -->
-      <p class="question">What kind of destinations are you interested in visiting?</p>
+    <!-- section element used here because flexbox doesn't work with fieldset element -->
+    <section class="pop-density"> <!-- Population Density Question -->
+      <legend class="question">What kind of destinations are you interested in visiting?</legend>
       <!-- User Input: Urban -->
       <input id="urban" value="urban" type="radio" name="density">
       <label class="noselect" for="urban">Concrete jungles</label>
@@ -37,9 +38,9 @@
       <!-- User Input: Indifferent -->
       <input id="indifferent--density" value="indifferent" type="radio" name="density">
       <label class="noselect" for="indifferent--density">It's all the same to me</label>
-    </fieldset> <!-- /Population Density Question -->
-    <fieldset class="climate"> <!-- Preferred Climate Question -->
-      <p class="question">What's the weather like there?</p>
+    </section> <!-- /Population Density Question -->
+    <section class="climate"> <!-- Preferred Climate Question -->
+      <legend class="question">What's the weather like there?</legend>
       <!-- User Input: Hot -->
       <input id="hot" value="hot" type="radio" name="climate">
       <label class="noselect" for="hot">If you like piña coladas!</label>
@@ -52,9 +53,9 @@
       <!-- User Input: Indifferent -->
       <input id="indifferent--climate" value="indifferent" type="radio" name="climate">
       <label class="noselect" for="indifferent--climate">Anything, I guess</label>
-    </fieldset> <!-- /Preferred Climate Question -->
-    <fieldset class="activity"> <!-- Activity Question -->
-      <p class="question">What do you feel like doing there?</p>
+    </section> <!-- /Preferred Climate Question -->
+    <section class="activity"> <!-- Activity Question -->
+      <legend class="question">What do you feel like doing there?</legend>
       <!-- User Input: Sights -->
       <input id="sights" value="sights" type="radio" name="activity">
       <label class="noselect" for="sights">My lens are my eyes</label>
@@ -64,10 +65,10 @@
       <!-- User Input: Indifferent -->
       <input id="indifferent--activity" value="indifferent" type="radio" name="activity">
       <label class="noselect" for="indifferent--activity">Just relax and chill...</label>
-    </fieldset> <!-- /Activity Question -->
-    <fieldset>
+    </section> <!-- /Activity Question -->
+    <section>
       <button type="submit">Submit</button>
-    </fieldset>
+    </section>
   </form>
   <section class="results">
     <!-- Dynamic Elements Go Here -->
@@ -75,7 +76,10 @@
   <footer>
     <p class="disclaimer">All statistics as per Wikipedia.</p>
   </footer>
+  <!-- Load jQuery -->
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <!-- External JavaScript -->
+  <script src="./js/data.js"></script>
   <script src="./js/script.js"></script>
 </body>
 </html>

@@ -1,18 +1,32 @@
 .questions {
 
 
-  & fieldset {
+  & section {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100vh;
     margin: 0;
     border: none;
     padding: 0;
+    
+    &.pop-density {
+      background: lightblue;
+    }
+
+    &.climate {
+      background: lightyellow;
+    }
+
+    &.activity {
+      background: lightgreen;
+    }
   }
 
   & input {
     opacity: 0;
-    position: absolute;
-    z-index: -1;
+    height: 0;
+    width: 0;
 
     &:checked + label {
       color: tomato;
@@ -21,6 +35,7 @@
 
   & label {
     display: inline-block;
+    border: 1px solid tomato;
     cursor: pointer;
   }
 }
