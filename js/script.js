@@ -252,7 +252,7 @@ $(function () {
   const randArrElem = arr => arr[Math.floor(Math.random() * arr.length)];
 
   //==-- Program --==//
-  $("form").on("submit", event => {
+  $(".questions").on("submit", event => {
     event.preventDefault();
 
     // Store user inputs into lets
@@ -266,11 +266,13 @@ $(function () {
     if (densityChoice === "indifferent" && climateChoice === "indifferent" && activityChoice === "indifferent") {
       // Code for staycation
     } else {
-      resultDestinationArray = objDestinations
+      // Pseudocode: objDestinations[random densityChoice/user densityChoice][random climateChoice/user climateChoice] passed into randArrElem function to obtain a random destination based on user choices, which is then stored in the resultDestination variable.
+      resultDestination = randArrElem(objDestinations
         /* Object Bracket Notation with nested if shorthand - checks if densityChoice is "indifferent", then obtains a random key within objDestinations, otherwise, use user input to obtain the object corresponding to the key within objDestinations */
         [((densityChoice === "indifferent") ? randObjKey(objDestinations) : densityChoice)]
-        [((climateChoice === "indifferent") ? randObjKey(objDestinations.urban) : climateChoice)];
-      console.log(resultDestinationArray);
+        /* Object Bracket Notation with nested if shorthand - checks if densityChoice is "indifferent", then obtains a random key within objDestinations, otherwise, use user input to obtain the object corresponding to the key within objDestinations */
+        [((climateChoice === "indifferent") ? randObjKey(objDestinations.urban) : climateChoice)]);
+      console.log(resultDestination);
     }
   });
 });

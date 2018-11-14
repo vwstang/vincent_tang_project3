@@ -6,3 +6,7 @@ body {
   font-size: 1.8rem;
   font-family: 'Inconsolata', serif;
 }
+
+.noselect {
+  user-select: none;
+}

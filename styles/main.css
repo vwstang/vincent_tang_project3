@@ -159,3 +159,29 @@ html {
 body {
   font-size: 1.8rem;
   font-family: 'Inconsolata', serif; }
+
+.noselect {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+.questions fieldset {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row; }
+
+.questions input {
+  opacity: 0;
+  position: absolute;
+  z-index: -1; }
+  .questions input:checked + label {
+    color: tomato; }
+
+.questions label {
+  margin: 0;
+  width: 50%; }

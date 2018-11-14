@@ -1,0 +1,23 @@
+.questions {
+
+
+  & fieldset {
+    display: flex;
+    flex-direction: row;
+  }
+
+  & input {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+
+    &:checked + label {
+      color: tomato;
+    }
+  }
+
+  & label {
+    margin: 0;
+    width: 50%;
+  }
+}
