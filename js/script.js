@@ -1,5 +1,12 @@
-//-- Randify Object --//
-// Object to store all randomizer functions as methods.
+//==-- GLOBAL VARIABLES --==//
+// let densityChoice, climateChoice, activityChoice; // Create dynamic variables to store user input choices
+// let resultDestination = "", resultActivity = ""; // Create dynamic variables to store processed results and initialize as empty strings.
+
+
+//==-- GLOBAL OBJECTS --==//
+
+//== Randify Object ==//
+// Stores all methods related to randomization logic
 const randify = {};
 
 //-- Random Object Key --//
@@ -13,48 +20,110 @@ randify.objKey = obj => {
 // Takes in an array argument and returns a random element within the array.
 randify.arrElem = arr => arr[Math.floor(Math.random() * arr.length)];
 
+//== /Randify Object ==/
 
-//==-- Application --==//
+
+//== Application Object ==//
+// Stores all methods related to the application logic
 const app = {};
 
-app.getDestination = () => {
-  // Store user inputs into lets
-  let densityChoice = $("input[name=density]:checked").val();
-  let climateChoice = $("input[name=climate]:checked").val();
-  let activityChoice = $("input[name=activity]:checked").val();
+// User input variables
+app.userDensity = "";
+app.userClimate = "";
+app.userActivity = "";
+app.rsltDestination = "";
+app.rsltActivity = "";
 
-  // Initialize empty variable to store result
-  let resultDestination = "";
-
-  // Check user indecisiveness by calling isIndecisive method
-  app.isIndecisive(densityChoice, climateChoice, activityChoice);
+//-- METHOD: Get Inputs --//
+// Obtains user input choices and stores into app variables
+app.getInputs = () => {
+  app.userDensity = $("input[name=density]:checked").val();
+  app.userClimate = $("input[name=climate]:checked").val();
+  app.userActivity = $("input[name=activity]:checked").val();
 }
 
 
-app.isIndecisive = (densityChoice, climateChoice, activityChoice) => {
-  // Catch the unique "indifferent" case, otherwise randify individual "indifferent" inputs
-  if (densityChoice === "indifferent" && climateChoice === "indifferent" && activityChoice === "indifferent") {
-    // Code for staycation
+app.checkValid = () => {
+  if (app.userDensity === "indifferent" && app.userClimate === "indifferent" && app.userActivity === "indifferent") {   // If all inputs are "indifferent"
+    return 1;
+  } else if (app.userDensity && app.userClimate && app.userActivity) { // If they are all truthy (i.e. valid)
+    return 2;
   } else {
-    // Pseudocode: objDestinations[random densityChoice/user densityChoice][random climateChoice/user climateChoice] passed into randArrElem function to obtain a random destination based on user choices, which is then stored in the resultDestination variable.
-    resultDestination = randify.arrElem(objDestinations
-    /* Object Bracket Notation with nested if shorthand - checks if densityChoice is "indifferent", then obtains a random key within objDestinations, otherwise, use user input to obtain the object corresponding to the key within objDestinations */
-    [((densityChoice === "indifferent") ? randify.objKey(objDestinations) : densityChoice)]
-    /* Object Bracket Notation with nested if shorthand - checks if densityChoice is "indifferent", then obtains a random key within objDestinations, otherwise, use user input to obtain the object corresponding to the key within objDestinations */
-    [((climateChoice === "indifferent") ? randify.objKey(objDestinations.urban) : climateChoice)]);
-    console.log(resultDestination);
+    return 3;
   }
 }
 
-//-- Initialize Application --//
-// The overall application function for randomizing a destination result.
+app.isIndecisive = () => {
+  if (app.userDensity === "indifferent") {
+    app.userDensity = randify.objKey(objDestinations);
+  }
+  if (app.userClimate === "indifferent") {
+    app.userClimate = randify.objKey(objDestinations[app.userDensity]);
+  }
+  if (app.userActivity === "indifferent") {
+    app.userActivity = randify.objKey(objDestInfo.Staycation.activities);
+  }
+}
+
+//-- METHOD: Get Destination --//
+// Generate a resulting destination based off user inputs (randomized already if input was "indifferent")
+app.getDestination = () => app.rsltDestination = randify.arrElem(objDestinations[app.userDensity][app.userClimate]);
+
+//-- METHOD: Get Activity --//
+// Generate a resulting activity based off rsltDestination
+app.getActivity = () => app.rsltActivity = randify.arrElem(objDestInfo[app.rsltDestination]["activities"][app.userActivity]);
+
+//-- METHOD: Initialize Application --//
+// Initialize the application
 app.init = () => {
   $(".questions").on("submit", e => {
     e.preventDefault();
-    app.getDestination();
+    app.getInputs();
+    switch (app.checkValid()) {
+      case 1:
+        app.rsltDestination = "Staycation";
+        app.userActivity = randify.objKey(objDestInfo.Staycation.activities);
+        app.getActivity();
+        console.log(`${app.rsltDestination} : ${app.rsltActivity}`);
+        break;
+      case 2:
+        app.isIndecisive();
+        app.getDestination();
+        app.getActivity();
+        console.log(`${app.rsltDestination} : ${app.rsltActivity}`);
+        break;
+      case 3:
+        alert("Do you even want to go on vacation? Go answer all the questions please.");
+        break;
+      default:
+        alert("An unknown error occurred.");
+        console.log("This code should never get run");
+        break;
+    }
   });
 };
 
+
+// For resetting the form IF HAVE TIME
+// app.reset = () => {
+  //   app.userDensity = "";
+  //   app.userClimate = "";
+  //   app.userActivity = "";
+  //   app.rsltDestination = "";
+  //   app.rsltActivity = "";
+  // }
+  
+  
+//==-- DOM MANIPULATOR OBJECT --==//
+// Stores all methods related to manipulating the DOM
+const domManip = {};
+
+// domManip.
+
+
+
+//==-- DOCUMENT READY --==//
+// Run app initializing when the document has been fully loaded
 $(() => {
   app.init();
 });

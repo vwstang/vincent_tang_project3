@@ -18,9 +18,11 @@
 </head>
 <body>
   <main class="start-here">
-    <h1>Where To Next?</h1>
-    <p>So you graduated coding school and found a job, and you don't start said job for another week or two. Luckily, you haven't run your funds dry from all the commuting back and forth and eating out during all the late night coding throughout school, and you want to go on a well deserved vacation. But wait! Where should you go?</p>
-    <p>Choose one of the answers to the following questions for a suggestion for your next vacation destination!</p>
+    <div class="wrapper">
+      <h1>Where To Next?</h1>
+      <p>So you graduated coding school and found a job, and you don't start said job for another week or two. Luckily, you haven't run your funds dry from all the commuting back and forth and eating out during all the late night coding throughout school, and you want to go on a well deserved vacation. But wait! Where should you go?</p>
+      <p>Choose one of the answers to the following questions for a suggestion for your next vacation destination!</p>
+    </div>
   </main>
   <form class="questions">
     <!-- section element used here because flexbox doesn't work with fieldset element -->
@@ -57,7 +59,7 @@
     <section class="activity"> <!-- Activity Question -->
       <legend class="question">What do you feel like doing there?</legend>
       <!-- User Input: Sights -->
-      <input id="sights" value="sights" type="radio" name="activity">
+      <input id="sights" value="sightseeing" type="radio" name="activity">
       <label class="noselect" for="sights">My lens are my eyes</label>
       <!-- User Input: Food -->
       <input id="food" value="food" type="radio" name="activity">

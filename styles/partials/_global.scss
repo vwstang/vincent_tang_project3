@@ -14,3 +14,16 @@ h1,h2,h3,h4,h5,h6 {
 .noselect {
   user-select: none;
 }
+
+.wrapper {
+  padding: 20px 5%;
+  background: steelblue;
+}
+
+@media (min-width: 968px) {
+  .wrapper {
+    margin: 0 auto;
+    max-width: 968px;
+    padding: 40px 10%;
+  }
+}

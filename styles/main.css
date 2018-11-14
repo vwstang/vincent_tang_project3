@@ -169,8 +169,17 @@ h1, h2, h3, h4, h5, h6 {
   -ms-user-select: none;
   user-select: none; }
 
+.wrapper {
+  padding: 20px 5%;
+  background: steelblue; }
+
+@media (min-width: 968px) {
+  .wrapper {
+    margin: 0 auto;
+    max-width: 968px;
+    padding: 40px 10%; } }
+
 .start-here {
-  height: 100vh;
   background: whitesmoke; }
 
 .questions section {
@@ -184,7 +193,6 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-box-align: start;
   -ms-flex-align: start;
   align-items: flex-start;
-  height: 100vh;
   margin: 0;
   border: none;
   padding: 0; }
