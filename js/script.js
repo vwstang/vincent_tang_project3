@@ -118,7 +118,8 @@ app.init = () => {
 // Stores all methods related to manipulating the DOM
 const domManip = {};
 
-// domManip.
+// Variables for storing generated responses to push to the DOM
+domManip.
 
 
 
