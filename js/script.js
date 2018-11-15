@@ -49,16 +49,11 @@ randify.foodPhrase = () => {
 // Stores all methods related to generating and printing the results
 const rsltPrinter = {};
 
-// Variables for storing generated responses to push to the DOM
-// domManip.
-// rsltPrinter.phrsDestInfo = "";
-// rsltPrinter.destActivityPhrase = "";
-
 //== METHOD: Paste HTML (to DOM) ==//
 // Takes a string argument formatted as markup and 
 rsltPrinter.pasteHTML = (clipboardItem,htmlTag) => {
   const mkupItem = `<${htmlTag}>${clipboardItem}</${htmlTag}>`;
-  $(".results").append(mkupItem);
+  $(".results").find(".wrapper").append(mkupItem);
 }
 
 //== METHOD: Generate Result ==//
@@ -79,7 +74,6 @@ rsltPrinter.genResults = (destination, activityType, activity) => {
   rsltPrinter.pasteHTML(genInfo, "p");
   rsltPrinter.pasteHTML(genAct, "p");
 }
-
 
 //==-- /RESULT PRINTER OBJECT --==//
 
@@ -118,7 +112,8 @@ app.checkValid = () => {
   }
 }
 
-//==  ==//
+//== METHOD: Replace indecisive choices ==//
+// Checks for 
 app.isIndecisive = () => {
   if (app.userDensity === "indifferent") {
     app.userDensity = randify.objKey(objDestinations);
