@@ -55,7 +55,7 @@ behaviour.markCompleted = sectionName => $(`.${sectionName}`).attr("value","comp
 
 //== METHOD: Find Next Section ==//
 // Finds the first section with a value of "next" within the form of class "questions" and scrolls it into view.
-behaviour.nextSection = sectionName => $("body").find(`section[value=${sectionName}]`).get(0).scrollIntoView();
+behaviour.nextSection = sectionName => window.setTimeout(() => $("body").find(`section[value=${sectionName}]`).get(0).scrollIntoView(),250);
 
 //==-- RESULT PRINTER OBJECT --==//
 // Stores all methods related to generating and printing the results

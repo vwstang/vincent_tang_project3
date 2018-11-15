@@ -258,7 +258,10 @@ h1, h2, h3, h4, h5, h6 {
     width: 0; }
     .questions .answer-set input:checked + label {
       color: tomato;
-      border: 1px solid tomato; }
+      border: 1px solid tomato;
+      -webkit-transition: all 0.2s;
+      -o-transition: all 0.2s;
+      transition: all 0.2s; }
   .questions .answer-set label {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -272,7 +275,10 @@ h1, h2, h3, h4, h5, h6 {
     border: 1px solid slategray;
     border-radius: 5px;
     padding: 2%;
-    cursor: pointer; }
+    cursor: pointer;
+    -webkit-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s; }
     .questions .answer-set label:nth-of-type(1) {
       margin-top: 20px; }
     .questions .answer-set label:hover {
