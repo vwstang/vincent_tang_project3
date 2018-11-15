@@ -313,4 +313,8 @@ const objDestInfo = {
       food: ["food1", "food2"],
     }
   }
-}
+};
+
+const arr = [
+  
+];

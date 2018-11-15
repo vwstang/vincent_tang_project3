@@ -23,6 +23,10 @@
     }
   }
 
+  & legend {
+    margin-bottom: 20px;
+  }
+
   & .answer-set {
     display: flex;
     flex-direction: row;
@@ -44,7 +48,7 @@
       min-height: 4rem;
       width: 100%;
       border: 1px solid tomato;
-      padding: 0 2%;
+      padding: 2%;
       cursor: pointer;
 
       &:hover {
