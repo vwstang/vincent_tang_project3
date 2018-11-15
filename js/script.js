@@ -55,7 +55,10 @@ behaviour.markCompleted = sectionName => $(`.${sectionName}`).attr("value","comp
 
 //== METHOD: Find Next Section ==//
 // Finds the first section with a value of "next" within the form of class "questions" and scrolls it into view.
-behaviour.nextSection = sectionName => window.setTimeout(() => $("body").find(`section[value=${sectionName}]`).get(0).scrollIntoView(),250);
+behaviour.nextSection = sectionName => window.setTimeout(() => $("body").find(`section[value=${sectionName}]`).get(0).scrollIntoView(), 250);
+
+//== METHOD: 
+
 
 //==-- RESULT PRINTER OBJECT --==//
 // Stores all methods related to generating and printing the results
@@ -177,6 +180,7 @@ app.init = () => {
         rsltPrinter.genResults(app.rsltDestination, app.userActivity, app.rsltActivity);
         $(".results").removeClass("hide");
         behaviour.nextSection("result");
+        window.setTimeout(() => $(".init-submit").addClass("fallout"),1000);
         break;
       // Case 2: Run the intended logic.
       case 2:
@@ -186,6 +190,7 @@ app.init = () => {
         rsltPrinter.genResults(app.rsltDestination, app.userActivity, app.rsltActivity);
         $(".results").removeClass("hide");
         behaviour.nextSection("result");
+        window.setTimeout(() => $(".init-submit").addClass("fallout"), 1000);
         break;
       // Case 3: Yell at the user for not even completing the form.
       case 3:

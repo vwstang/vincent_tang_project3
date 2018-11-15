@@ -24,7 +24,7 @@ body {
   background: var(--body-bg-color);
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1,h2,h3,h4,h5,h6,legend {
   font-family: 'Arvo', serif;
 }
 
@@ -37,6 +37,8 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .wrapper {
+  height: 100vh;
+  min-height: 500px;
   width: 100%;
   min-width: 320px;
   padding: 20px 5%;

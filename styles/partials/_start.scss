@@ -1,5 +1,7 @@
 .start-here {
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   background: whitesmoke;
 }
 
@@ -14,6 +16,7 @@
 }
 
 .disclaimer {
+  margin-top: auto;
   font-size: 1.2rem;
   font-style: italic;
 }
