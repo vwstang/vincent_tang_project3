@@ -184,6 +184,10 @@ h1, h2, h3, h4, h5, h6 {
 .start-here {
   background: whitesmoke; }
 
+.disclaimer {
+  font-size: 0.6rem;
+  font-style: italic; }
+
 .questions section {
   display: -webkit-box;
   display: -ms-flexbox;

@@ -21,10 +21,27 @@ randify.arrElem = arr => arr[Math.floor(Math.random() * arr.length)];
 
 
 //== METHOD: Random Phrase Generator ==//
+// Takes in an array of food items (from objDestInfo) and returns a string containing a (hopefully) grammatically correct sentence.
+// This METHOD is currently IMPURE - might just stay that way though.
+randify.foodPhrase = () => {
+  let arrPhrase = randify.arrElem(arrFoodPhrases);
 
-randify.phrase = food => {
-  
-}
+  const strPhrase = arrPhrase.reduce((accum,elem) => {
+    switch (elem) {
+      case 1:
+        accum = accum + app.rsltActivity;
+        break;
+      case 2:
+        accum = accum + app.rsltDestination;
+        break;
+      default:
+        accum += elem;
+        break;
+    }
+    return accum;
+  });
+  return strPhrase;
+};
 
 
 //==-- /RANDIFY OBJECT --==/
@@ -68,11 +85,15 @@ app.getInputs = () => {
   app.userActivity = $("input[name=activity]:checked").val();
 }
 
-//==  ==//
+//== METHOD: Check Validity ==//
+// Checks if the user inputs are valid:
+// 1) If all inputs are "indifferent", then return case 1 and suggest a staycation because the user is lazy.
+// 2) If all inputs are truthy (i.e. no inputs are left unselected i.e. valid inputs), then return case 2 and run the intended logic.
+// 3) Otherwise, one or two inputs have not been selected. Return case 3 and yell at user to complete the form.
 app.checkValid = () => {
-  if (app.userDensity === "indifferent" && app.userClimate === "indifferent" && app.userActivity === "indifferent") {   // If all inputs are "indifferent"
+  if (app.userDensity === "indifferent" && app.userClimate === "indifferent" && app.userActivity === "indifferent") {
     return 1;
-  } else if (app.userDensity && app.userClimate && app.userActivity) { // If they are all truthy (i.e. valid)
+  } else if (app.userDensity && app.userClimate && app.userActivity) {
     return 2;
   } else {
     return 3;
@@ -107,21 +128,25 @@ app.init = () => {
     e.preventDefault();
     app.getInputs();
     switch (app.checkValid()) {
+      // Case 1: Suggest a staycation because the user is lazy.
       case 1:
         app.rsltDestination = "Staycation";
         app.userActivity = randify.objKey(objDestInfo.Staycation.activities);
         app.getActivity();
         console.log(`${app.rsltDestination} : ${app.rsltActivity}`);
         break;
+      // Case 2: Run the intended logic.
       case 2:
         app.isIndecisive();
         app.getDestination();
         app.getActivity();
         console.log(`${app.rsltDestination} : ${app.rsltActivity}`);
         break;
+      // Case 3: Yell at the user for not even completing the form.
       case 3:
         alert("Do you even want to go on vacation? Go answer all the questions please.");
         break;
+      // Default: This code should never actually run.
       default:
         alert("An unknown error occurred.");
         console.log("This code should never get run");

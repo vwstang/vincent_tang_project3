@@ -315,6 +315,9 @@ const objDestInfo = {
   }
 };
 
-const arr = [
-  
+// 2D array of phrases to be randomized with food activities
+const arrFoodPhrases = [
+  ["If you've ever heard of ", 1, ", then you're in luck, because it's something you can easily find in ", 2, "."],
+  ["As for food and drinks, you HAVE to go try ", 1, " when you're there. Trust me, it'll knock your socks off!"],
+  ["When I went to ", 2, " back in [INSERT NON-EXISTENT DATE OF TRIP], I really enjoyed ", 1, ". You should definitely get it on your trip there."]
 ];
