@@ -245,8 +245,9 @@ h1, h2, h3, h4, h5, h6, legend {
   align-items: center;
   margin: 0;
   border: none;
-  border-top: 1px solid tomato;
-  padding: 0; }
+  border-top: 1px solid tomato; }
+  .questions section .answer-set {
+    width: 100%; }
   .questions section.density {
     background: var(--question-bg-color); }
   .questions section.climate {

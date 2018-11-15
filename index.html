@@ -27,23 +27,21 @@
     </main>
     <form class="questions">
       <!-- section element used here because flexbox doesn't work with fieldset element -->
-      <section class="density" value="next"> <!-- Population Density Question -->
-        <div class="wrapper">
-          <legend class="question">What kind of destinations are you interested in visiting?</legend>
-          <div class="answer-set">
-            <!-- User Input: Urban -->
-            <input id="urban" value="urban" type="radio" name="density">
-            <label class="noselect" for="urban">Concrete jungles</label>
-            <!-- User Input: Suburban -->
-            <input id="suburban" value="suburban" type="radio" name="density">
-            <label class="noselect" for="suburban">Small town vibes</label>
-            <!-- User Input: Rural -->
-            <input id="rural" value="rural" type="radio" name="density">
-            <label class="noselect" for="rural">Cabin in the woods</label>
-            <!-- User Input: Indifferent -->
-            <input id="indifferent--density" value="indifferent" type="radio" name="density">
-            <label class="noselect" for="indifferent--density">It's all the same to me</label>
-          </div>
+      <section class="density wrapper" value="next"> <!-- Population Density Question -->
+        <legend class="question">What kind of destinations are you interested in visiting?</legend>
+        <div class="answer-set">
+          <!-- User Input: Urban -->
+          <input id="urban" value="urban" type="radio" name="density">
+          <label class="noselect" for="urban">Concrete jungles</label>
+          <!-- User Input: Suburban -->
+          <input id="suburban" value="suburban" type="radio" name="density">
+          <label class="noselect" for="suburban">Small town vibes</label>
+          <!-- User Input: Rural -->
+          <input id="rural" value="rural" type="radio" name="density">
+          <label class="noselect" for="rural">Cabin in the woods</label>
+          <!-- User Input: Indifferent -->
+          <input id="indifferent--density" value="indifferent" type="radio" name="density">
+          <label class="noselect" for="indifferent--density">It's all the same to me</label>
         </div>
       </section> <!-- /Population Density Question -->
       <section class="climate" value="next"> <!-- Preferred Climate Question -->

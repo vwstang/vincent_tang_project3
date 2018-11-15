@@ -57,12 +57,21 @@ behaviour.markCompleted = sectionName => $(`.${sectionName}`).attr("value","comp
 // Finds the first section with a value of "next" within the form of class "questions" and scrolls it into view.
 behaviour.nextSection = sectionName => window.setTimeout(() => $("body").find(`section[value=${sectionName}]`).get(0).scrollIntoView(), 250);
 
-//== METHOD: 
-
 
 //==-- RESULT PRINTER OBJECT --==//
 // Stores all methods related to generating and printing the results
 const rsltPrinter = {};
+
+//== METHOD: Format Numbers ==//
+// Adds thousands separators to numbers and convert to string
+rsltPrinter.frmtNum = num => {
+  const strNum = num.toString();
+  let result = "";
+  for (let i = strNum.length - 1; i >= 0; --i) {
+    (i % 3 === 0 && i !== 0) ? result = "," + strNum[i] + result : result = strNum[i] + result;
+  }
+  return result;
+}
 
 //== METHOD: Paste HTML (to DOM) ==//
 // Takes a string argument formatted as markup and 
@@ -75,7 +84,7 @@ rsltPrinter.pasteHTML = (clipboardItem,htmlTag) => {
 // Generates the result section and append to DOM
 rsltPrinter.genResults = (destination, activityType, activity) => {
   const genHeader = destination;
-  const genInfo = `${destination} is a beautiful place in ${objDestInfo[destination].country}. It has a population of ${objDestInfo[destination].population} (as of ${objDestInfo[destination].censusYear}), perfect for your love of ${app.userDensity} locations.`
+  const genInfo = `${destination} is a beautiful place in ${objDestInfo[destination].country}. It has a population of ${rsltPrinter.frmtNum(objDestInfo[destination].population)} (as of ${objDestInfo[destination].censusYear}), perfect for your love of ${app.userDensity} locations.`
   let genAct;
   if (activityType === "food") {
     genAct = randify.foodPhrase();
