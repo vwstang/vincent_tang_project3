@@ -3,6 +3,16 @@
   background: whitesmoke;
 }
 
+.start {
+  text-transform: uppercase;
+  color: var(--link-color);
+  cursor: pointer;
+
+  &:hover {
+    color: var(--link-hover-color);
+  }
+}
+
 .disclaimer {
   font-size: 1.2rem;
   font-style: italic;

@@ -18,21 +18,19 @@
 </head>
 <body>
   <div class="page-wrapper">
-
-  </div>
-  <main class="start-here">
-    <div class="wrapper">
-      <h1>Where To Next?</h1>
-      <p>So you finally graduated coding school and found a job, and you don't start said job for another week or two. Luckily, you haven't run your funds dry from all the commuting back and forth and eating out during late nights of coding, and so you might be thinking of going on a well deserved vacation. Where should you go?</p>
-      <p>In the following questions, choose the most relevant answer to you at this moment and I'll provide a suggestion to you for your next vacation destination!</p>
-      <p>No time to waste &mdash; let's get <span class="start">started.</span></p>
-      <p class="disclaimer">All statistics as per Wikipedia. Much thanks to CYZW for helping with furiously researching into possible travel activities at various destinations so that you can be a lazy bum in deciding on your next vacation trip!</p>
-    </div>
-  </main>
-  <form class="questions">
-    <!-- section element used here because flexbox doesn't work with fieldset element -->
-    <section class="density" value="next"> <!-- Population Density Question -->
+    <main class="start-here scroll-point">
       <div class="wrapper">
+        <h1>Where To Next?</h1>
+        <p>So you finally graduated coding school and found a job, and you don't start said job for another week or two. Luckily, you haven't run your funds dry from all the commuting back and forth and eating out during late nights of coding, and so you might be thinking of going on a well deserved vacation. Where should you go?</p>
+        <p>In the following questions, choose the most relevant answer to you at this moment and I'll provide a suggestion to you for your next vacation destination!</p>
+        <p>No time to waste &mdash; let's get <span class="start">started.</span></p>
+        <p class="disclaimer">All statistics as per Wikipedia. Much thanks to CYZW for helping with furiously researching into possible travel activities at various destinations so that you can be a lazy bum in deciding on your next vacation trip!</p>
+      </div>
+    </main>
+    <form class="questions">
+      <!-- section element used here because flexbox doesn't work with fieldset element -->
+      <section class="density scroll-point" value="next"> <!-- Population Density Question -->
+        <div class="wrapper">
           <legend class="question">What kind of destinations are you interested in visiting?</legend>
           <div class="answer-set">
             <!-- User Input: Urban -->
@@ -48,58 +46,59 @@
             <input id="indifferent--density" value="indifferent" type="radio" name="density">
             <label class="noselect" for="indifferent--density">It's all the same to me</label>
           </div>
-      </div>
-    </section> <!-- /Population Density Question -->
-    <section class="climate" value="next"> <!-- Preferred Climate Question -->
+        </div>
+      </section> <!-- /Population Density Question -->
+      <section class="climate scroll-point" value="next"> <!-- Preferred Climate Question -->
+        <div class="wrapper">
+          <legend class="question">What's the weather like there?</legend>
+          <div class="answer-set">
+            <!-- User Input: Hot -->
+            <input id="hot" value="hot" type="radio" name="climate">
+            <label class="noselect" for="hot">If you like piña coladas!</label>
+            <!-- User Input: Varying -->
+            <input id="varying" value="varying" type="radio" name="climate">
+            <label class="noselect" for="varying">It's not too hot and not too cold. It's JUUUUUUUUST right!</label>
+            <!-- User Input: Cold -->
+            <input id="cold" value="cold" type="radio" name="climate">
+            <label class="noselect" for="cold">Do you wanna build a snowman?</label>
+            <!-- User Input: Indifferent -->
+            <input id="indifferent--climate" value="indifferent" type="radio" name="climate">
+            <label class="noselect" for="indifferent--climate">Anything, I guess</label>
+          </div>
+        </div>
+      </section> <!-- /Preferred Climate Question -->
+      <section class="activity scroll-point" value="next"> <!-- Activity Question -->
+        <div class="wrapper">
+          <legend class="question">What do you feel like doing there?</legend>
+          <div class="answer-set">
+            <!-- User Input: Sights -->
+            <input id="sights" value="sightseeing" type="radio" name="activity">
+            <label class="noselect" for="sights">My lens are my eyes</label>
+            <!-- User Input: Food -->
+            <input id="food" value="food" type="radio" name="activity">
+            <label class="noselect" for="food">Epic Meal Time!</label>
+            <!-- User Input: Indifferent -->
+            <input id="indifferent--activity" value="indifferent" type="radio" name="activity">
+            <label class="noselect" for="indifferent--activity">Just relax and chill...</label>
+          </div>
+          <div class="shelter">
+            <button class="init-submit fallout" type="submit">Suggest me a destination!</button>
+          </div>
+        </div>
+      </section> <!-- /Activity Question -->
+    </form> <!-- /.questions -->
+    <section class="results scroll-point hide" value="result">
       <div class="wrapper">
-        <legend class="question">What's the weather like there?</legend>
-        <div class="answer-set">
-          <!-- User Input: Hot -->
-          <input id="hot" value="hot" type="radio" name="climate">
-          <label class="noselect" for="hot">If you like piña coladas!</label>
-          <!-- User Input: Varying -->
-          <input id="varying" value="varying" type="radio" name="climate">
-          <label class="noselect" for="varying">It's not too hot and not too cold. It's JUUUUUUUUST right!</label>
-          <!-- User Input: Cold -->
-          <input id="cold" value="cold" type="radio" name="climate">
-          <label class="noselect" for="cold">Do you wanna build a snowman?</label>
-          <!-- User Input: Indifferent -->
-          <input id="indifferent--climate" value="indifferent" type="radio" name="climate">
-          <label class="noselect" for="indifferent--climate">Anything, I guess</label>
-        </div>
+        <!-- Dynamic Elements Go Here -->
       </div>
-    </section> <!-- /Preferred Climate Question -->
-    <section class="activity" value="next"> <!-- Activity Question -->
-      <div class="wrapper">
-        <legend class="question">What do you feel like doing there?</legend>
-        <div class="answer-set">
-          <!-- User Input: Sights -->
-          <input id="sights" value="sightseeing" type="radio" name="activity">
-          <label class="noselect" for="sights">My lens are my eyes</label>
-          <!-- User Input: Food -->
-          <input id="food" value="food" type="radio" name="activity">
-          <label class="noselect" for="food">Epic Meal Time!</label>
-          <!-- User Input: Indifferent -->
-          <input id="indifferent--activity" value="indifferent" type="radio" name="activity">
-          <label class="noselect" for="indifferent--activity">Just relax and chill...</label>
-        </div>
-        <div class="shelter">
-          <button class="init-submit fallout" type="submit">Suggest me a destination!</button>
-        </div>
-      </div>
-    </section> <!-- /Activity Question -->
-  </form> <!-- /.questions -->
-  <section class="results hide" value="result">
-    <div class="wrapper">
-      <!-- Dynamic Elements Go Here -->
-    </div>
-  </section>
-  <footer>
-  </footer>
-  <!-- Load jQuery -->
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-  <!-- External JavaScript -->
-  <script src="./js/data.js"></script>
-  <script src="./js/script.js"></script>
+    </section>
+    <footer>
+    </footer>
+    <!-- Load Libraries-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- External JavaScript -->
+    <script src="./js/data.js"></script>
+    <script src="./js/script.js"></script>
+  </div> <!-- /.page-wrapper -->
 </body>
 </html>
