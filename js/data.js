@@ -1,5 +1,5 @@
 //==-- Arrays to store possible results --==//
-// 3D array of vacation destinations
+// 2D object containing arrays of vacation destinations
 const objDestinations = {
   urban: {
     hot: ["Hong Kong", "Kuala Lumpur", "Vientiane"],
@@ -18,12 +18,12 @@ const objDestinations = {
   }
 };
 
-// 2D array of destination activities
+// Multi-Dimensional object containing destination information and arrays of activities
 const objDestInfo = {
   Oslo: {
     country: "Norway",
     population: 673469,
-    censusyear: 2018,
+    censusYear: 2018,
     activities: {
       sightseeing: ["oslosight1", "oslosight2", "oslosight3"],
       food: ["oslofood1", "oslofood2", "oslofood3"]
@@ -32,7 +32,7 @@ const objDestInfo = {
   Brussels: {
     country: "Belgium",
     population: 1191604,
-    censusyear: 2017,
+    censusYear: 2017,
     activities: {
       sightseeing: [
         "brusselssight1",
@@ -49,7 +49,7 @@ const objDestInfo = {
   "Hong Kong": {
     country: "China",
     population: 7448900,
-    censusyear: 2018,
+    censusYear: 2018,
     activities: {
       sightseeing: [
         "hksight1",
@@ -66,7 +66,7 @@ const objDestInfo = {
   Óbidos: {
     country: "Portugal",
     population: 3100,
-    censusyear: 2015,
+    censusYear: 2015,
     activities: {
       sightseeing: [
         "Óbidos Castle; walk the wall",
@@ -78,7 +78,7 @@ const objDestInfo = {
   Seville: {
     country: "Spain",
     population: 703021,
-    censusyear: 2011,
+    censusYear: 2011,
     activities: {
       sightseeing: [
         "Plaza de España",
@@ -91,7 +91,7 @@ const objDestInfo = {
   Reykjavík: {
     country: "Iceland",
     population: 122853,
-    censusyear: 2016,
+    censusYear: 2016,
     activities: {
       sightseeing: [""],
       food: ["food1", "food2"]
@@ -100,7 +100,7 @@ const objDestInfo = {
   Harbin: {
     country: "China",
     population: 10635971,
-    censusyear: 2010,
+    censusYear: 2010,
     activities: {
       sightseeing: [
         "harbinsight1",
@@ -117,7 +117,7 @@ const objDestInfo = {
   Innsbruck: {
     country: "Austria",
     population: 130894,
-    censusyear: 2016,
+    censusYear: 2016,
     activities: {
       sightseeing: [""],
       food: ["food1", "food2"]
@@ -126,7 +126,7 @@ const objDestInfo = {
   Yellowknife: {
     country: "Canada",
     population: 19569,
-    censusyear: 2016,
+    censusYear: 2016,
     activities: {
       sightseeing: [
         "Aurora Borealis is visible throughout winter months"
@@ -137,7 +137,7 @@ const objDestInfo = {
   Staycation: {
     country: "the safety and comfort of your own home",
     population: "your family members",
-    censusyear: "today",
+    censusYear: "today",
     activities: {
       sightseeing: [
         "watch TV",
@@ -154,7 +154,7 @@ const objDestInfo = {
   "Cayman Islands": {
     country: null,
     population: 60765,
-    censusyear: 2016,
+    censusYear: 2016,
     activities: {
       sightseeing: ["beaches", "place2"],
       food: ["drinks", "place2"]
@@ -163,7 +163,7 @@ const objDestInfo = {
   Perth: {
     country: "Australia",
     population: 2022044,
-    censusyear: 2016,
+    censusYear: 2016,
     activities: {
       sightseeing: ["place1", "place2"],
       food: ["food1", "food2"]
@@ -172,7 +172,7 @@ const objDestInfo = {
   Oulu: {
     country: "",
     population: 0,
-    censusyear: 0,
+    censusYear: 0,
     activities: {
       sightseeing: ["place1", "place2"],
       food: ["food1", "food2"],
@@ -181,7 +181,7 @@ const objDestInfo = {
   "Kuala Lumpur": {
     country: "",
     population: 0,
-    censusyear: 0,
+    censusYear: 0,
     activities: {
       sightseeing: ["place1", "place2"],
       food: ["food1", "food2"],
@@ -190,7 +190,7 @@ const objDestInfo = {
   "Santa Maddalena": {
     country: "Italy",
     population: 0,
-    censusyear: 0,
+    censusYear: 0,
     activities: {
       sightseeing: ["place1", "place2"],
       food: ["food1", "food2"],
@@ -199,7 +199,7 @@ const objDestInfo = {
   Stepantsminda: {
     country: "Georgia",
     population: 1326,
-    censusyear: 2014,
+    censusYear: 2014,
     activities: {
       sightseeing: ["place1", "place2"],
       food: ["food1", "food2"],
@@ -208,7 +208,7 @@ const objDestInfo = {
   "Shirakawa Village": {
     country: "Japan",
     population: 1668,
-    censusyear: 2017,
+    censusYear: 2017,
     activities: {
       sightseeing: ["place1", "place2"],
       food: ["food1", "food2"],
@@ -217,7 +217,7 @@ const objDestInfo = {
   Split: {
     country: "Croatia",
     population: 178102,
-    censusyear: 2011,
+    censusYear: 2011,
     activities: {
       sightseeing: ["place1", "place2"],
       food: ["food1", "food2"],
@@ -226,7 +226,7 @@ const objDestInfo = {
   "Mamanuca Islands": {
     country: "Fiji",
     population: 900,
-    censusyear: 2017,
+    censusYear: 2017,
     activities: {
       sightseeing: ["place1", "place2"],
       food: ["food1", "food2"],
@@ -235,7 +235,7 @@ const objDestInfo = {
   "Sidi Bou Said": {
     country: "Tunisia",
     population: 5911,
-    censusyear: 2014,
+    censusYear: 2014,
     activities: {
       sightseeing: ["place1", "place2"],
       food: ["food1", "food2"],
@@ -244,7 +244,7 @@ const objDestInfo = {
   "Zermatt": {
     country: "Switzerland",
     population: 5643,
-    censusyear: 0,
+    censusYear: 0,
     activities: {
       sightseeing: ["place1", "place2"],
       food: ["food1", "food2"],
@@ -253,7 +253,7 @@ const objDestInfo = {
   "Maui": {
     country: "Hawaii, USA",
     population: 144444,
-    censusyear: 2010,
+    censusYear: 2010,
     activities: {
       sightseeing: ["place1", "place2"],
       food: ["food1", "food2"],
@@ -262,7 +262,7 @@ const objDestInfo = {
   "Stuttgart": {
     country: "Germany",
     population: 632743,
-    censusyear: 2017,
+    censusYear: 2017,
     activities: {
       sightseeing: ["Porsche Museum", "place2"],
       food: ["food1", "food2"],
@@ -271,7 +271,7 @@ const objDestInfo = {
   "Bordeaux": {
     country: "France",
     population: 250776,
-    censusyear: 2016,
+    censusYear: 2016,
     activities: {
       sightseeing: ["place1", "place2"],
       food: ["food1", "food2"],
@@ -280,7 +280,7 @@ const objDestInfo = {
   "Vientiane": {
     country: "Laos",
     population: 0,
-    censusyear: 0,
+    censusYear: 0,
     activities: {
       sightseeing: ["place1", "place2"],
       food: ["food1", "food2"],
@@ -289,7 +289,7 @@ const objDestInfo = {
   "Jeju Island": {
     country: "South Korea",
     population: 621550,
-    censusyear: 2014,
+    censusYear: 2014,
     activities: {
       sightseeing: ["place1", "place2"],
       food: ["food1", "food2"],
@@ -298,7 +298,7 @@ const objDestInfo = {
   "Venice": {
     country: "Italy",
     population: 261905,
-    censusyear: 2017,
+    censusYear: 2017,
     activities: {
       sightseeing: ["place1", "place2"],
       food: ["food1", "food2"],
@@ -307,7 +307,7 @@ const objDestInfo = {
   "Minsk": {
     country: "Belarus",
     population: 1982444,
-    censusyear: 2018,
+    censusYear: 2018,
     activities: {
       sightseeing: ["place1", "place2"],
       food: ["food1", "food2"],

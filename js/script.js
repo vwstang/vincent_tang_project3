@@ -19,7 +19,6 @@ randify.objKey = obj => {
 // Takes in an array argument and returns a random element within the array.
 randify.arrElem = arr => arr[Math.floor(Math.random() * arr.length)];
 
-
 //== METHOD: Random Phrase Generator ==//
 // Takes in an array of food items (from objDestInfo) and returns a string containing a (hopefully) grammatically correct sentence.
 // This METHOD is currently IMPURE - might just stay that way though.
@@ -43,27 +42,46 @@ randify.foodPhrase = () => {
   return strPhrase;
 };
 
-
 //==-- /RANDIFY OBJECT --==/
 
 
-//==-- DOM MANIPULATOR OBJECT --==//
-// Stores all methods related to manipulating the DOM
-const domManip = {};
+//==-- RESULT PRINTER OBJECT --==//
+// Stores all methods related to generating and printing the results
+const rsltPrinter = {};
 
 // Variables for storing generated responses to push to the DOM
 // domManip.
-domManip.phrsDestInfo = "";
-domManip.destActivityPhrase = "";
+// rsltPrinter.phrsDestInfo = "";
+// rsltPrinter.destActivityPhrase = "";
 
 //== METHOD: Paste HTML (to DOM) ==//
 // Takes a string argument formatted as markup and 
-domManip.pasteHTML = (clipboardItem,htmlTag) => {
+rsltPrinter.pasteHTML = (clipboardItem,htmlTag) => {
   const mkupItem = `<${htmlTag}>${clipboardItem}</${htmlTag}>`;
   $(".results").append(mkupItem);
 }
 
-//==-- /DOM MANIPULATOR OBJECT --==//
+//== METHOD: Generate Result ==//
+// Generates the result section and append to DOM
+rsltPrinter.genResults = (destination, activityType, activity) => {
+  const genHeader = destination;
+  const genInfo = `${destination} is a beautiful place in ${objDestInfo[destination].country}. It has a population of ${objDestInfo[destination].population} (as of ${objDestInfo[destination].censusYear}), perfect for your love of ${app.userDensity} locations.`
+  let genAct;
+  if (activityType === "food") {
+    genAct = randify.foodPhrase();
+  } else if (activityType === "sightseeing") {
+    genAct = randify.arrElem(objDestInfo[destination].activities[activityType]);
+  } else {
+    // This code should not run technically. This statement can be scaled if more activity choices were implemented.
+    console.log("What?");
+  }
+  rsltPrinter.pasteHTML(genHeader, "h2");
+  rsltPrinter.pasteHTML(genInfo, "p");
+  rsltPrinter.pasteHTML(genAct, "p");
+}
+
+
+//==-- /RESULT PRINTER OBJECT --==//
 
 
 //==-- APPLICATION OBJECT --==//
@@ -141,6 +159,7 @@ app.init = () => {
         app.getDestination();
         app.getActivity();
         console.log(`${app.rsltDestination} : ${app.rsltActivity}`);
+        rsltPrinter.genResults(app.rsltDestination, app.userActivity, app.rsltActivity);
         break;
       // Case 3: Yell at the user for not even completing the form.
       case 3:
