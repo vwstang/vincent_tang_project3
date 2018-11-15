@@ -1,14 +1,19 @@
 // SASS Variables
 $tablet: 600px;
 $desktop: 968px;
+// $text-border: 1px 0 0 black, 0 1px 0 black, -1px 0 0 black, 0 -1px 0 black
 
 // CSS Variables
 :root {
+  --body-bg-color: #18314F;
+  --section-bg-color: whitesmoke;
+  --header-color: #384E77;
   --text-color: black;
-  --body-bg-color: #2c2c2c;
-  --question-bg-color: whitesmoke;
-  --link-color: dodgerblue;
-  --link-hover-color: tomato;
+  --link-color: #3C6E71;
+  --link-hover-color: #C05746;
+  --button-color: black; //011638;
+  --button-select-color: #C05746;
+  // --button-selected-color: #ECA400;
 }
 
 html {
@@ -26,6 +31,7 @@ body {
 
 h1,h2,h3,h4,h5,h6,legend {
   font-family: 'Arvo', serif;
+  color: var(--header-color);
 }
 
 .noselect {
@@ -37,8 +43,6 @@ h1,h2,h3,h4,h5,h6,legend {
 }
 
 .wrapper {
-  height: 100vh;
-  min-height: 500px;
   width: 100%;
   min-width: 320px;
   padding: 20px 5%;

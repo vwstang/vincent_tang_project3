@@ -22,16 +22,18 @@ randify.arrElem = arr => arr[Math.floor(Math.random() * arr.length)];
 //== METHOD: Random Phrase Generator ==//
 // Takes in an array of food items (from objDestInfo) and returns a string containing a (hopefully) grammatically correct sentence.
 // This METHOD is currently IMPURE - might just stay that way though.
-randify.foodPhrase = () => {
-  let arrPhrase = randify.arrElem(arrFoodPhrases);
+randify.strPhrase = (destination,activityType,activity) => {
+  let arrPhrase = randify.arrElem(arrPhrases[activityType]);
 
-  const strPhrase = arrPhrase.reduce((accum,elem) => {
+  const result = arrPhrase.reduce((accum,elem) => {
     switch (elem) {
       case 1:
-        accum = accum + app.rsltActivity;
+        console.log(activity);
+        accum = accum + activity;
         break;
       case 2:
-        accum = accum + app.rsltDestination;
+        console.log(activity);
+        accum = accum + destination;
         break;
       default:
         accum += elem;
@@ -39,7 +41,7 @@ randify.foodPhrase = () => {
     }
     return accum;
   });
-  return strPhrase;
+  return result;
 };
 
 //==-- /RANDIFY OBJECT --==/
@@ -85,15 +87,7 @@ rsltPrinter.pasteHTML = (clipboardItem,htmlTag) => {
 rsltPrinter.genResults = (destination, activityType, activity) => {
   const genHeader = destination;
   const genInfo = `${destination} is a beautiful place in ${objDestInfo[destination].country}. It has a population of ${rsltPrinter.frmtNum(objDestInfo[destination].population)} (as of ${objDestInfo[destination].censusYear}), perfect for your love of ${app.userDensity} locations.`
-  let genAct;
-  if (activityType === "food") {
-    genAct = randify.foodPhrase();
-  } else if (activityType === "sightseeing") {
-    genAct = randify.arrElem(objDestInfo[destination].activities[activityType]);
-  } else {
-    // This code should not run technically. This statement can be scaled if more activity choices were implemented.
-    console.log("What?");
-  }
+  const genAct = randify.strPhrase(destination,activityType,activity);
   $(".results").find(".wrapper").empty();
   rsltPrinter.pasteHTML(genHeader, "h2");
   rsltPrinter.pasteHTML(genInfo, "p");
@@ -189,7 +183,6 @@ app.init = () => {
         rsltPrinter.genResults(app.rsltDestination, app.userActivity, app.rsltActivity);
         $(".results").removeClass("hide");
         behaviour.nextSection("result");
-        window.setTimeout(() => $(".init-submit").addClass("fallout"),1000);
         break;
       // Case 2: Run the intended logic.
       case 2:
@@ -199,7 +192,6 @@ app.init = () => {
         rsltPrinter.genResults(app.rsltDestination, app.userActivity, app.rsltActivity);
         $(".results").removeClass("hide");
         behaviour.nextSection("result");
-        window.setTimeout(() => $(".init-submit").addClass("fallout"), 1000);
         break;
       // Case 3: Yell at the user for not even completing the form.
       case 3:

@@ -154,11 +154,14 @@ a {
 
 /*** /Initialize CSS ***/
 :root {
+  --body-bg-color: #18314F;
+  --section-bg-color: whitesmoke;
+  --header-color: #384E77;
   --text-color: black;
-  --body-bg-color: #2c2c2c;
-  --question-bg-color: whitesmoke;
-  --link-color: dodgerblue;
-  --link-hover-color: tomato; }
+  --link-color: #3C6E71;
+  --link-hover-color: #C05746;
+  --button-color: black;
+  --button-select-color: #C05746; }
 
 html {
   font-size: 62.5%;
@@ -172,7 +175,8 @@ body {
   background: var(--body-bg-color); }
 
 h1, h2, h3, h4, h5, h6, legend {
-  font-family: 'Arvo', serif; }
+  font-family: 'Arvo', serif;
+  color: var(--header-color); }
 
 .noselect {
   -webkit-user-select: none;
@@ -184,8 +188,6 @@ h1, h2, h3, h4, h5, h6, legend {
   display: none; }
 
 .wrapper {
-  height: 100vh;
-  min-height: 500px;
   width: 100%;
   min-width: 320px;
   padding: 20px 5%; }
@@ -215,11 +217,14 @@ h1, h2, h3, h4, h5, h6, legend {
   -webkit-box-pack: start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  background: whitesmoke; }
+  height: 100vh;
+  min-height: 500px;
+  background: var(--section-bg-color); }
 
 .start {
-  text-transform: uppercase;
+  font-size: 4rem;
   color: var(--link-color);
+  text-transform: uppercase;
   cursor: pointer; }
   .start:hover {
     color: var(--link-hover-color); }
@@ -244,38 +249,34 @@ h1, h2, h3, h4, h5, h6, legend {
   -ms-flex-align: center;
   align-items: center;
   margin: 0;
+  height: 100vh;
+  min-height: 500px;
   border: none;
-  border-top: 1px solid tomato; }
+  background: var(--section-bg-color); }
   .questions section .answer-set {
     width: 100%; }
-  .questions section.density {
-    background: var(--question-bg-color); }
-  .questions section.climate {
-    background: var(--question-bg-color); }
-  .questions section.activity {
-    background: var(--question-bg-color); }
-    .questions section.activity .shelter {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
-      justify-content: center;
-      margin-top: 60px;
-      background: var(--question-bg-color); }
-      .questions section.activity .shelter .init-submit {
-        position: relative;
-        z-index: 1;
-        opacity: 1;
-        -webkit-transition: opacity 1s;
-        -o-transition: opacity 1s;
-        transition: opacity 1s;
-        border: 0;
-        border-radius: 5px;
-        padding: 5px 50px; }
-      .questions section.activity .shelter .fallout {
-        z-index: -1;
-        opacity: 0; }
+  .questions section.activity .shelter {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin-top: 60px;
+    background: var(--section-bg-color); }
+    .questions section.activity .shelter .init-submit {
+      position: relative;
+      z-index: 1;
+      opacity: 1;
+      -webkit-transition: opacity 1s;
+      -o-transition: opacity 1s;
+      transition: opacity 1s;
+      border: 0;
+      border-radius: 5px;
+      padding: 5px 50px; }
+    .questions section.activity .shelter .fallout {
+      z-index: -1;
+      opacity: 0; }
 
 .questions legend {
   padding: 0;
@@ -296,8 +297,8 @@ h1, h2, h3, h4, h5, h6, legend {
     height: 0;
     width: 0; }
     .questions .answer-set input:checked + label {
-      color: tomato;
-      border: 1px solid tomato;
+      color: var(--button-select-color);
+      border: 1px solid var(--button-select-color);
       -webkit-transition: all 0.2s;
       -o-transition: all 0.2s;
       transition: all 0.2s; }
@@ -311,9 +312,10 @@ h1, h2, h3, h4, h5, h6, legend {
     min-height: 4rem;
     margin-top: 10px;
     width: 100%;
-    border: 1px solid slategray;
+    border: 1px solid var(--button-color);
     border-radius: 5px;
     padding: 2%;
+    color: var(--button-color);
     cursor: pointer;
     -webkit-transition: all 0.2s;
     -o-transition: all 0.2s;
@@ -321,8 +323,12 @@ h1, h2, h3, h4, h5, h6, legend {
     .questions .answer-set label:nth-of-type(1) {
       margin-top: 20px; }
     .questions .answer-set label:hover {
-      color: tomato; }
+      color: var(--button-select-color);
+      -webkit-transition: all 0.2s;
+      -o-transition: all 0.2s;
+      transition: all 0.2s; }
 
 .results {
   height: 100vh;
-  background: var(--question-bg-color); }
+  min-height: 500px;
+  background: var(--section-bg-color); }

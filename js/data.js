@@ -93,7 +93,7 @@ const objDestInfo = {
     population: 122853,
     censusYear: 2016,
     activities: {
-      sightseeing: [""],
+      sightseeing: ["reyksight1","reyksight2"],
       food: ["food1", "food2"]
     }
   },
@@ -316,8 +316,18 @@ const objDestInfo = {
 };
 
 // 2D array of phrases to be randomized with food activities
-const arrFoodPhrases = [
-  ["If you've ever heard of ", 1, ", then you're in luck, because it's something you can easily find in ", 2, "."],
-  ["As for food and drinks, you HAVE to go try ", 1, " when you're there. Trust me, it'll knock your socks off!"],
-  ["When I went to ", 2, " back in [INSERT NON-EXISTENT DATE OF TRIP], I really enjoyed ", 1, ". You should definitely get it on your trip there."]
-];
+const arrPhrases = {
+  info: [
+    []
+  ],
+  sightseeing: [
+    [1, " is a cool place in ", 2,". Go check it out! Bring back some cool pictures."],
+    ["I heard that ", 1, " is worth visiting. It's totally Instagram worthy, so you can get some sick pics and post to your feed!"],
+    ["You haven't been to ", 2," if you haven't seen ", 1]
+  ],
+  food: [
+    ["If you've ever heard of ", 1, ", then you're in luck, because it's something you can easily find in ", 2, "."],
+    ["As for food and drinks, you HAVE to go try ", 1, " when you're there. Trust me, it'll knock your socks off!"],
+    ["When I went to ", 2, " back in [INSERT NON-EXISTENT DATE OF TRIP], I really enjoyed ", 1, ". You should definitely get it on your trip there."]
+  ]
+};
