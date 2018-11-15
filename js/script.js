@@ -45,6 +45,18 @@ randify.foodPhrase = () => {
 //==-- /RANDIFY OBJECT --==/
 
 
+//==-- BEHAVIOUR OBJECT --==//
+// Stores all methods related to interactive behaviour of the app
+const behaviour = {};
+
+//== METHOD: Mark Section as Completed ==//
+// Sets the value of the passed section as completed.
+behaviour.markCompleted = sectionName => $(`.${sectionName}`).attr("value","completed");
+
+//== METHOD: Find Next Section ==//
+// Finds the first section with a value of "next" within the form of class "questions" and scrolls it into view.
+behaviour.nextSection = sectionName => $("body").find(`section[value=${sectionName}]`).get(0).scrollIntoView();
+
 //==-- RESULT PRINTER OBJECT --==//
 // Stores all methods related to generating and printing the results
 const rsltPrinter = {};
@@ -70,6 +82,7 @@ rsltPrinter.genResults = (destination, activityType, activity) => {
     // This code should not run technically. This statement can be scaled if more activity choices were implemented.
     console.log("What?");
   }
+  $(".results").find(".wrapper").empty();
   rsltPrinter.pasteHTML(genHeader, "h2");
   rsltPrinter.pasteHTML(genInfo, "p");
   rsltPrinter.pasteHTML(genAct, "p");
@@ -135,8 +148,22 @@ app.getDestination = () => app.rsltDestination = randify.arrElem(objDestinations
 app.getActivity = () => app.rsltActivity = randify.arrElem(objDestInfo[app.rsltDestination]["activities"][app.userActivity]);
 
 //== METHOD: Initialize Application ==//
-// Initialize the application
+// Initialize the application and add event listeners
 app.init = () => {
+  $("span.start").on("click", () => behaviour.nextSection("next"));
+
+  $("input[name=density]").on("click", () => {
+    behaviour.markCompleted("density"); // Set current section value as completed
+    behaviour.nextSection("next"); // Scroll to next section
+  });
+
+  $("input[name=climate]").on("click", () => {
+    behaviour.markCompleted("climate");
+    behaviour.nextSection("next");
+  });
+
+  $("input[name=activity").on("click", () => $(".init-submit").removeClass("fallout"));
+
   $(".questions").on("submit", e => {
     e.preventDefault();
     app.getInputs();
@@ -146,19 +173,23 @@ app.init = () => {
         app.rsltDestination = "Staycation";
         app.userActivity = randify.objKey(objDestInfo.Staycation.activities);
         app.getActivity();
-        console.log(`${app.rsltDestination} : ${app.rsltActivity}`);
+        rsltPrinter.genResults(app.rsltDestination, app.userActivity, app.rsltActivity);
+        $(".results").removeClass("hide");
+        behaviour.nextSection("result");
         break;
       // Case 2: Run the intended logic.
       case 2:
         app.isIndecisive();
         app.getDestination();
         app.getActivity();
-        console.log(`${app.rsltDestination} : ${app.rsltActivity}`);
         rsltPrinter.genResults(app.rsltDestination, app.userActivity, app.rsltActivity);
+        $(".results").removeClass("hide");
+        behaviour.nextSection("result");
         break;
       // Case 3: Yell at the user for not even completing the form.
       case 3:
         alert("Do you even want to go on vacation? Go answer all the questions please.");
+        behaviour.nextSection("next");
         break;
       // Default: This code should never actually run.
       default:

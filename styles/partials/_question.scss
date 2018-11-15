@@ -4,13 +4,14 @@
   & section {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    // height: 100vh;
+    height: 100vh;
     margin: 0;
     border: none;
     padding: 0;
     
-    &.pop-density {
+    &.density {
       background: lightblue;
     }
 
@@ -20,6 +21,27 @@
 
     &.activity {
       background: lightgreen;
+
+      & .shelter {
+        display: flex;
+        justify-content: center;
+        margin-top: 100px;
+        background: lightgreen;
+
+        & .init-submit {
+          position: relative;
+          z-index: 1;
+          opacity: 1;
+          transition: opacity 1s;
+          border: 0;
+          padding: 5px 50px;
+        }
+
+        & .fallout {
+          z-index: -1;
+          opacity: 0;
+        }
+      }
     }
   }
 
@@ -63,5 +85,4 @@
       }
     }
   }
-
 }

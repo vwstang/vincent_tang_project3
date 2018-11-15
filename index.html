@@ -25,13 +25,13 @@
       <h1>Where To Next?</h1>
       <p>So you finally graduated coding school and found a job, and you don't start said job for another week or two. Luckily, you haven't run your funds dry from all the commuting back and forth and eating out during late nights of coding, and so you might be thinking of going on a well deserved vacation. Where should you go?</p>
       <p>In the following questions, choose the most relevant answer to you at this moment and I'll provide a suggestion to you for your next vacation destination!</p>
-      <p>No time to waste &mdash; let's get started.</p>
+      <p>No time to waste &mdash; let's get <span class="start">started.</span></p>
       <p class="disclaimer">All statistics as per Wikipedia. Much thanks to CYZW for helping with furiously researching into possible travel activities at various destinations so that you can be a lazy bum in deciding on your next vacation trip!</p>
     </div>
   </main>
   <form class="questions">
     <!-- section element used here because flexbox doesn't work with fieldset element -->
-    <section class="pop-density"> <!-- Population Density Question -->
+    <section class="density" value="next"> <!-- Population Density Question -->
       <div class="wrapper">
           <legend class="question">What kind of destinations are you interested in visiting?</legend>
           <div class="answer-set">
@@ -50,7 +50,7 @@
           </div>
       </div>
     </section> <!-- /Population Density Question -->
-    <section class="climate"> <!-- Preferred Climate Question -->
+    <section class="climate" value="next"> <!-- Preferred Climate Question -->
       <div class="wrapper">
         <legend class="question">What's the weather like there?</legend>
         <div class="answer-set">
@@ -69,7 +69,7 @@
         </div>
       </div>
     </section> <!-- /Preferred Climate Question -->
-    <section class="activity"> <!-- Activity Question -->
+    <section class="activity" value="next"> <!-- Activity Question -->
       <div class="wrapper">
         <legend class="question">What do you feel like doing there?</legend>
         <div class="answer-set">
@@ -83,11 +83,13 @@
           <input id="indifferent--activity" value="indifferent" type="radio" name="activity">
           <label class="noselect" for="indifferent--activity">Just relax and chill...</label>
         </div>
-        <button type="submit">Submit</button>
+        <div class="shelter">
+          <button class="init-submit fallout" type="submit">Suggest me a destination!</button>
+        </div>
       </div>
     </section> <!-- /Activity Question -->
-  </form>
-  <section class="results">
+  </form> <!-- /.questions -->
+  <section class="results hide" value="result">
     <div class="wrapper">
       <!-- Dynamic Elements Go Here -->
     </div>

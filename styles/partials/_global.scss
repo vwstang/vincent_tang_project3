@@ -1,5 +1,6 @@
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -14,6 +15,10 @@ h1,h2,h3,h4,h5,h6 {
 
 .noselect {
   user-select: none;
+}
+
+.hide {
+  display: none;
 }
 
 .wrapper {
