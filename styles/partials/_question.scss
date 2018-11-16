@@ -31,6 +31,7 @@
   align-content: space-between;
   height: 80%;
   width: 100%;
+  margin: auto 0;
 
   & input {
     position: absolute;
@@ -47,12 +48,14 @@
 
   & label {
     display: flex;
+    justify-content: center;
     align-items: center;
     min-height: 6rem;
     position: relative;
     height: calc((100% - 60px) / 4);
     width: 100%;
     padding: 2%;
+    text-align: center;
     @include btn-inactive-state();
 
     &:hover {
@@ -62,6 +65,7 @@
     & span {
       position: relative;
       z-index: 2;
+      font-size: 2rem;
     }
     
     &.urban::after {

@@ -170,13 +170,13 @@ html {
 body {
   min-width: 320px;
   font-size: 1.6rem;
-  font-family: 'Lato', sans-serif;
+  font-family: "Karla", sans-serif;
   color: var(--text-color);
   background: var(--body-bg-color); }
 
 h1, h2, h3, h4, h5, h6, legend {
   color: var(--header-color);
-  font-family: 'Arvo', serif;
+  font-family: "Maven Pro", serif;
   font-weight: bold;
   font-size: 2.4rem; }
 
@@ -262,9 +262,9 @@ p {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
   height: 70%;
   min-height: 500px; }
   .container--start {
@@ -329,7 +329,7 @@ p {
 
 .disclaimer {
   margin: auto 0 0 0;
-  font-size: 1.2rem;
+  font-size: 0.8rem;
   font-style: italic; }
 
 /* Font size set for awkwardly small screens; reset to intended font size once viewport is larger */
@@ -373,7 +373,8 @@ p {
   -ms-flex-line-pack: justify;
   align-content: space-between;
   height: 80%;
-  width: 100%; }
+  width: 100%;
+  margin: auto 0; }
   .answer-set input {
     position: absolute;
     z-index: -9001;
@@ -392,6 +393,9 @@ p {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
@@ -400,6 +404,7 @@ p {
     height: calc((100% - 60px) / 4);
     width: 100%;
     padding: 2%;
+    text-align: center;
     cursor: pointer;
     border: 1px solid var(--button-color);
     border-radius: 5px;
@@ -416,7 +421,8 @@ p {
       /* Necessary to specify otherwise flex-wrap gets animated on resize and it looks ugly */ }
     .answer-set label span {
       position: relative;
-      z-index: 2; }
+      z-index: 2;
+      font-size: 2rem; }
     .answer-set label.urban::after {
       content: "";
       position: absolute;
