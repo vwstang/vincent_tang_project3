@@ -53,6 +53,7 @@ $body-font-stack: 'Karla', sans-serif;
   bottom: 0;
   left: 0;
   opacity: 0.3;
+  transition: transform 0.5s;
 }
 
 // CSS Variables for colors
@@ -63,9 +64,9 @@ $body-font-stack: 'Karla', sans-serif;
   --header-color: #384E77;
   --text-color: #000;
   --link-color: #4B898D;
-  --link-hover-color: #F46036;
+  --link-hover-color: #CA350B;
   --button-color: #000;
-  --button-select-color: #F46036;
+  --button-select-color: #CA350B;
 }
 
 html {

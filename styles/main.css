@@ -160,9 +160,9 @@ a {
   --header-color: #384E77;
   --text-color: #000;
   --link-color: #4B898D;
-  --link-hover-color: #F46036;
+  --link-hover-color: #CA350B;
   --button-color: #000;
-  --button-select-color: #F46036; }
+  --button-select-color: #CA350B; }
 
 html {
   font-size: 62.5%;
@@ -350,6 +350,11 @@ a {
     bottom: 0;
     left: 0;
     opacity: 0.3;
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: -webkit-transform 0.5s;
+    -o-transition: transform 0.5s;
+    transition: transform 0.5s;
+    transition: transform 0.5s, -webkit-transform 0.5s;
     opacity: 0.6;
     background: black; }
 
@@ -475,6 +480,11 @@ a {
       bottom: 0;
       left: 0;
       opacity: 0.3;
+      -webkit-transition: -webkit-transform 0.5s;
+      transition: -webkit-transform 0.5s;
+      -o-transition: transform 0.5s;
+      transition: transform 0.5s;
+      transition: transform 0.5s, -webkit-transform 0.5s;
       background: url(../assets/urban.jpg) center 90%/cover no-repeat; }
     .answer-set label.suburban::before {
       content: "";
@@ -484,6 +494,11 @@ a {
       bottom: 0;
       left: 0;
       opacity: 0.3;
+      -webkit-transition: -webkit-transform 0.5s;
+      transition: -webkit-transform 0.5s;
+      -o-transition: transform 0.5s;
+      transition: transform 0.5s;
+      transition: transform 0.5s, -webkit-transform 0.5s;
       background: url(../assets/suburban.jpg) center center/cover no-repeat; }
     .answer-set label.rural::before {
       content: "";
@@ -493,6 +508,11 @@ a {
       bottom: 0;
       left: 0;
       opacity: 0.3;
+      -webkit-transition: -webkit-transform 0.5s;
+      transition: -webkit-transform 0.5s;
+      -o-transition: transform 0.5s;
+      transition: transform 0.5s;
+      transition: transform 0.5s, -webkit-transform 0.5s;
       background: url(../assets/rural.jpg) center 45%/cover no-repeat; }
     .answer-set label.indifferent-density::before {
       content: "";
@@ -502,6 +522,11 @@ a {
       bottom: 0;
       left: 0;
       opacity: 0.3;
+      -webkit-transition: -webkit-transform 0.5s;
+      transition: -webkit-transform 0.5s;
+      -o-transition: transform 0.5s;
+      transition: transform 0.5s;
+      transition: transform 0.5s, -webkit-transform 0.5s;
       background: url(../assets/indifferent-density.jpg) center 45%/cover no-repeat; }
     .answer-set label.hot::before {
       content: "";
@@ -511,6 +536,11 @@ a {
       bottom: 0;
       left: 0;
       opacity: 0.3;
+      -webkit-transition: -webkit-transform 0.5s;
+      transition: -webkit-transform 0.5s;
+      -o-transition: transform 0.5s;
+      transition: transform 0.5s;
+      transition: transform 0.5s, -webkit-transform 0.5s;
       background: url(../assets/hot.jpg) center center/cover no-repeat; }
     .answer-set label.varying::before {
       content: "";
@@ -520,6 +550,11 @@ a {
       bottom: 0;
       left: 0;
       opacity: 0.3;
+      -webkit-transition: -webkit-transform 0.5s;
+      transition: -webkit-transform 0.5s;
+      -o-transition: transform 0.5s;
+      transition: transform 0.5s;
+      transition: transform 0.5s, -webkit-transform 0.5s;
       background: url(../assets/varying.jpg) center center/cover no-repeat; }
     .answer-set label.cold::before {
       content: "";
@@ -529,6 +564,11 @@ a {
       bottom: 0;
       left: 0;
       opacity: 0.3;
+      -webkit-transition: -webkit-transform 0.5s;
+      transition: -webkit-transform 0.5s;
+      -o-transition: transform 0.5s;
+      transition: transform 0.5s;
+      transition: transform 0.5s, -webkit-transform 0.5s;
       background: url(../assets/cold.jpg) center 40%/cover no-repeat; }
     .answer-set label.indifferent-climate::before {
       content: "";
@@ -538,6 +578,11 @@ a {
       bottom: 0;
       left: 0;
       opacity: 0.3;
+      -webkit-transition: -webkit-transform 0.5s;
+      transition: -webkit-transform 0.5s;
+      -o-transition: transform 0.5s;
+      transition: transform 0.5s;
+      transition: transform 0.5s, -webkit-transform 0.5s;
       background: url(../assets/indifferent-climate.jpg) center center/cover no-repeat; }
     .answer-set label:hover {
       color: var(--button-select-color);
@@ -575,6 +620,12 @@ a {
     font-size: 2.8rem; }
   .answer-set label span {
     font-size: 2.4rem; } }
+
+@media (min-width: 1280px) {
+  .question {
+    font-size: 3.2rem; }
+  .answer-set label span {
+    font-size: 2.8rem; } }
 
 .results {
   height: 100vh;
