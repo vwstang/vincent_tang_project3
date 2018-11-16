@@ -105,6 +105,19 @@ a {
   display: none;
 }
 
+.skip-link {
+  position: absolute;
+  left: -1000px;
+  top: 0;
+  z-index: 9999;
+  background: white;
+  color: black;
+  
+  &:focus {
+    left: 0;
+  }
+}
+
 
 /* Button Styles */
 .shelter {
