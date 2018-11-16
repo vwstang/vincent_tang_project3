@@ -9,6 +9,16 @@ $sm-font-maxvw: 450px;
 $heading-font: 'Maven Pro';
 $body-font: 'Karla';
 
+@mixin link-style() {
+  color: var(--link-color);
+  transition: color 0.2s;
+
+  &:hover {
+    color: var(--link-hover-color);
+    transition: color 0.2s;
+  }
+}
+
 @mixin btn-inactive-state() {
   cursor: pointer;
   border: 1px solid var(--button-color);
@@ -64,6 +74,10 @@ p {
   margin-bottom: 0;
 }
 
+a {
+  @include link-style();
+}
+
 .noselect {
   user-select: none;
 }
@@ -110,29 +124,6 @@ p {
 }
 /* /Button Styles */
 
-/* Background Images */
-.background {
-  height: 30%;
-  min-height: $img-bg-mh;
-  width: 100%;
-  
-  &--start {
-    background: url(https://source.unsplash.com/random/1000x500) center / cover no-repeat;
-  }
-
-  &--density {
-    background: url(https://source.unsplash.com/random/1000x501) center / cover no-repeat;
-  }
-
-  &--climate {
-    background: url(https://source.unsplash.com/random/1000x502) center / cover no-repeat;
-  }
-
-  &--activity {
-    background: url(https://source.unsplash.com/random/1000x503) center / cover no-repeat;
-  }
-}
-/* /Background Images */
 
 .container {
   display: flex;
@@ -183,5 +174,10 @@ p {
   .wrapper {
     margin: 0 auto;
     max-width: $desktop;
+  }
+
+  .container--start {
+    height: 60%;
+    min-height: auto;
   }
 }

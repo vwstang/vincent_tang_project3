@@ -183,6 +183,17 @@ h1, h2, h3, h4, h5, h6, legend {
 p {
   margin-bottom: 0; }
 
+a {
+  color: var(--link-color);
+  -webkit-transition: color 0.2s;
+  -o-transition: color 0.2s;
+  transition: color 0.2s; }
+  a:hover {
+    color: var(--link-hover-color);
+    -webkit-transition: color 0.2s;
+    -o-transition: color 0.2s;
+    transition: color 0.2s; }
+
 .noselect {
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -239,21 +250,6 @@ p {
     opacity: 0; }
 
 /* /Button Styles */
-/* Background Images */
-.background {
-  height: 30%;
-  min-height: 100px;
-  width: 100%; }
-  .background--start {
-    background: url(https://source.unsplash.com/random/1000x500) center/cover no-repeat; }
-  .background--density {
-    background: url(https://source.unsplash.com/random/1000x501) center/cover no-repeat; }
-  .background--climate {
-    background: url(https://source.unsplash.com/random/1000x502) center/cover no-repeat; }
-  .background--activity {
-    background: url(https://source.unsplash.com/random/1000x503) center/cover no-repeat; }
-
-/* /Background Images */
 .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -299,7 +295,29 @@ p {
     max-width: 968px; }
   .wrapper {
     margin: 0 auto;
-    max-width: 968px; } }
+    max-width: 968px; }
+  .container--start {
+    height: 60%;
+    min-height: auto; } }
+
+/* Background Images */
+.background {
+  height: 30%;
+  min-height: 100px;
+  width: 100%; }
+  .background--start {
+    background: url(../assets/start.jpg) center 30%/cover no-repeat; }
+  .background--density {
+    background: url(https://source.unsplash.com/random/1000x501) center/cover no-repeat; }
+  .background--climate {
+    background: url(https://source.unsplash.com/random/1000x502) center/cover no-repeat; }
+  .background--activity {
+    background: url(https://source.unsplash.com/random/1000x503) center/cover no-repeat; }
+
+/* /Background Images */
+@media (min-width: 968px) {
+  .background--start {
+    height: 40%; } }
 
 .start-here {
   display: -webkit-box;
@@ -315,9 +333,9 @@ p {
 
 .start {
   font-size: 2rem;
-  color: var(--link-color);
   text-transform: uppercase;
   cursor: pointer;
+  color: var(--link-color);
   -webkit-transition: color 0.2s;
   -o-transition: color 0.2s;
   transition: color 0.2s; }

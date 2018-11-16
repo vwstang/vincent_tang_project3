@@ -1,0 +1,29 @@
+/* Background Images */
+.background {
+  height: 30%;
+  min-height: $img-bg-mh;
+  width: 100%;
+  
+  &--start {
+    background: url(../assets/start.jpg) center 30% / cover no-repeat;
+  }
+
+  &--density {
+    background: url(https://source.unsplash.com/random/1000x501) center / cover no-repeat;
+  }
+
+  &--climate {
+    background: url(https://source.unsplash.com/random/1000x502) center / cover no-repeat;
+  }
+
+  &--activity {
+    background: url(https://source.unsplash.com/random/1000x503) center / cover no-repeat;
+  }
+}
+/* /Background Images */
+
+@media (min-width: $desktop) {
+  .background--start {
+    height: 40%;
+  }
+}
