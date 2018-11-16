@@ -2,18 +2,20 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
-  min-height: 500px;
+  min-height: $section-mh;
   background: var(--section-bg-color);
 }
 
 .start {
-  font-size: 2.4rem;
+  font-size: 2rem;
   color: var(--link-color);
   text-transform: uppercase;
   cursor: pointer;
+  transition: color 0.2s;
 
   &:hover {
     color: var(--link-hover-color);
+    transition: color 0.2s;
   }
 }
 
@@ -21,4 +23,15 @@
   margin: auto 0 0 0;
   font-size: 1.2rem;
   font-style: italic;
+}
+
+/* Font size set for awkwardly small screens; reset to intended font size once viewport is larger */
+@media (min-width: $sm-font-maxvw), (min-height: $sm-font-maxvh) {
+  .start {
+    font-size: 2.2rem;
+  }
+
+  .disclaimer {
+    font-size: 1.2rem;
+  }
 }

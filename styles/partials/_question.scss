@@ -1,4 +1,4 @@
-@mixin btn-bg() {
+@mixin input-bg() {
   content: "";
   position: absolute;
   top: 0;
@@ -8,112 +8,93 @@
   opacity: 0.3;
 }
 
-.questions {
+.questions section {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  height: 100vh;
+  min-height: $section-mh;
+  border: none;
+  background: var(--section-bg-color);
+}
 
-  & section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 0;
-    height: 100vh;
-    min-height: 500px;
-    border: none;
-    background: var(--section-bg-color);
+.question {
+  width: 100%;
+  padding: 0;
+}
 
-    & .answer-set {
-      width: 100%;
+.answer-set {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+  height: 80%;
+  width: 100%;
+
+  & input {
+    position: absolute;
+    z-index: -9001;
+    opacity: 0;
+    height: 0;
+    width: 0;
+    border: 0;
+
+    &:checked + label {
+      @include btn-active-state();
     }
   }
 
-  & legend {
+  & label {
+    display: flex;
+    align-items: center;
+    min-height: 6rem;
+    position: relative;
+    height: calc((100% - 60px) / 4);
     width: 100%;
-    padding: 0;
-  }
+    padding: 2%;
+    @include btn-inactive-state();
 
-  & .answer-set {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-
-    & input {
-      opacity: 0;
-      height: 0;
-      width: 0;
-  
-      &:checked + label {
-        color: var(--button-select-color);
-        border: 1px solid var(--button-select-color);
-        transition: all 0.2s;
-      }
+    &:hover {
+      @include btn-hover-state();
     }
-  
-    & label {
-      display: flex;
-      align-items: center;
-      min-height: 8rem;
+
+    & span {
       position: relative;
-      margin-top: 10px;
-      width: 100%;
-      border: 1px solid var(--button-color);
-      border-radius: 5px;
-      padding: 2%;
-      color: var(--button-color);
-      cursor: pointer;
-      transition: all 0.2s;
+      z-index: 2;
+    }
+    
+    &.urban::after {
+      @include input-bg();
+      background: url(../assets/urban.jpg) center bottom / cover no-repeat;
+    }
 
-      &:nth-of-type(1) {
-        margin-top: 20px;
-      }
+    &.suburban::after {
+      @include input-bg();
+      background: url(../assets/suburban.jpg) center center / cover no-repeat;
+    }
 
-      &:hover {
-        color: var(--button-select-color);
-        transition: all 0.2s;
-      }
+    &.rural::after {
+      @include input-bg();
+      background: url(../assets/rural.jpg) center center / cover no-repeat;
+    }
 
-      & span {
-        position: relative;
-        z-index: 2;
-      }
-      
-      &.urban::after {
-        @include btn-bg();
-        background: url(../assets/urban.jpg) center bottom / cover no-repeat;
-      }
-
-      &.suburban::after {
-        @include btn-bg();
-        background: url(../assets/suburban.jpg) center center / cover no-repeat;
-      }
-
-      &.rural::after {
-        @include btn-bg();
-        background: url(../assets/rural.jpg) center center / cover no-repeat;
-      }
-
-      &.indifferent--density {
-
-      }
+    &.indifferent-density::after {
+      @include input-bg();
+      background: url(../assets/indifferent-density.jpg) center center / cover no-repeat;
     }
   }
 }
 
 @media (min-width: $tablet) {
-  .questions .answer-set label {
-    width: calc(50% - (10px / 2));
-    min-height: 14rem;
-
-    &:nth-of-type(2) {
-      margin-top: 20px;
-    }
-
-    &:nth-of-type(2n+1) {
-      margin-right: 10px;
-    }
+  .answer-set label {
+    height: calc((100% - 20px) / 2);
+    width: calc((100% - 20px) / 2);
   }
 }
 
 @media (min-width: $desktop) {
-  .questions .answer-set label {
-    // min-height: 16rem;
-  }
+  // .answer-set label {
+  //   min-height: 16rem;
+  // }
 }

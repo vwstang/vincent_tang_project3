@@ -169,7 +169,7 @@ html {
 
 body {
   min-width: 320px;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-family: 'Lato', sans-serif;
   color: var(--text-color);
   background: var(--body-bg-color); }
@@ -178,7 +178,7 @@ h1, h2, h3, h4, h5, h6, legend {
   color: var(--header-color);
   font-family: 'Arvo', serif;
   font-weight: bold;
-  font-size: 2.6rem; }
+  font-size: 2.4rem; }
 
 p {
   margin-bottom: 0; }
@@ -200,18 +200,40 @@ p {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin-top: 60px;
   background: var(--section-bg-color); }
   .shelter .init-submit {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
     position: relative;
     z-index: 1;
     opacity: 1;
     -webkit-transition: opacity 1s;
     -o-transition: opacity 1s;
     transition: opacity 1s;
-    border: 0;
+    line-height: 4rem;
+    padding: 0 50px;
+    cursor: pointer;
+    border: 1px solid var(--button-color);
     border-radius: 5px;
-    padding: 5px 50px; }
+    color: var(--button-color);
+    -webkit-transition: color 0.2s, border 0.2s;
+    -o-transition: color 0.2s, border 0.2s;
+    transition: color 0.2s, border 0.2s;
+    /* Necessary to specify otherwise flex-wrap gets animated on resize and it looks ugly */ }
+    .shelter .init-submit:hover {
+      color: var(--button-select-color); }
+    .shelter .init-submit:focus, .shelter .init-submit:active {
+      color: var(--button-select-color);
+      border: 1px solid var(--button-select-color);
+      -webkit-transition: color 0.2s, border 0.2s;
+      -o-transition: color 0.2s, border 0.2s;
+      transition: color 0.2s, border 0.2s;
+      /* Necessary to specify otherwise flex-wrap gets animated on resize and it looks ugly */
+      outline: none; }
   .shelter .fallout {
     z-index: -1;
     opacity: 0; }
@@ -220,6 +242,7 @@ p {
 /* Background Images */
 .background {
   height: 30%;
+  min-height: 100px;
   width: 100%; }
   .background--start {
     background: url(https://source.unsplash.com/random/1000x500) center/cover no-repeat; }
@@ -239,10 +262,11 @@ p {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  height: 70%; }
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  height: 70%;
+  min-height: 500px; }
   .container--start {
     -webkit-box-pack: start;
     -ms-flex-pack: start;
@@ -256,7 +280,18 @@ p {
 .wrapper {
   width: 100%;
   min-width: 320px;
-  padding: 50px 5%; }
+  padding: 25px 5%; }
+
+/* Font size set for awkwardly small screens; reset to intended font size once viewport is larger */
+@media (min-width: 450px), (min-height: 800px) {
+  body {
+    font-size: 1.8rem; }
+  h1, h2, h3, h4, h5, h6, legend {
+    font-size: 2.6rem; } }
+
+@media (min-width: 680px) {
+  .wrapper {
+    padding: 50px 10%; } }
 
 @media (min-width: 968px) {
   .page-wrapper {
@@ -264,8 +299,7 @@ p {
     max-width: 968px; }
   .wrapper {
     margin: 0 auto;
-    max-width: 968px;
-    padding: 80px 8%; } }
+    max-width: 968px; } }
 
 .start-here {
   display: -webkit-box;
@@ -276,21 +310,34 @@ p {
   -ms-flex-direction: column;
   flex-direction: column;
   height: 100vh;
-  min-height: 500px;
+  min-height: 600px;
   background: var(--section-bg-color); }
 
 .start {
-  font-size: 2.4rem;
+  font-size: 2rem;
   color: var(--link-color);
   text-transform: uppercase;
-  cursor: pointer; }
+  cursor: pointer;
+  -webkit-transition: color 0.2s;
+  -o-transition: color 0.2s;
+  transition: color 0.2s; }
   .start:hover {
-    color: var(--link-hover-color); }
+    color: var(--link-hover-color);
+    -webkit-transition: color 0.2s;
+    -o-transition: color 0.2s;
+    transition: color 0.2s; }
 
 .disclaimer {
   margin: auto 0 0 0;
   font-size: 1.2rem;
   font-style: italic; }
+
+/* Font size set for awkwardly small screens; reset to intended font size once viewport is larger */
+@media (min-width: 450px), (min-height: 800px) {
+  .start {
+    font-size: 2.2rem; }
+  .disclaimer {
+    font-size: 1.2rem; } }
 
 .questions section {
   display: -webkit-box;
@@ -300,22 +347,17 @@ p {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
   margin: 0;
   height: 100vh;
-  min-height: 500px;
+  min-height: 600px;
   border: none;
   background: var(--section-bg-color); }
-  .questions section .answer-set {
-    width: 100%; }
 
-.questions legend {
+.question {
   width: 100%;
   padding: 0; }
 
-.questions .answer-set {
+.answer-set {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -324,47 +366,58 @@ p {
   -ms-flex-direction: row;
   flex-direction: row;
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap; }
-  .questions .answer-set input {
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-line-pack: justify;
+  align-content: space-between;
+  height: 80%;
+  width: 100%; }
+  .answer-set input {
+    position: absolute;
+    z-index: -9001;
     opacity: 0;
     height: 0;
-    width: 0; }
-    .questions .answer-set input:checked + label {
+    width: 0;
+    border: 0; }
+    .answer-set input:checked + label {
       color: var(--button-select-color);
       border: 1px solid var(--button-select-color);
-      -webkit-transition: all 0.2s;
-      -o-transition: all 0.2s;
-      transition: all 0.2s; }
-  .questions .answer-set label {
+      -webkit-transition: color 0.2s, border 0.2s;
+      -o-transition: color 0.2s, border 0.2s;
+      transition: color 0.2s, border 0.2s;
+      /* Necessary to specify otherwise flex-wrap gets animated on resize and it looks ugly */ }
+  .answer-set label {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    min-height: 8rem;
+    min-height: 6rem;
     position: relative;
-    margin-top: 10px;
+    height: calc((100% - 60px) / 4);
     width: 100%;
+    padding: 2%;
+    cursor: pointer;
     border: 1px solid var(--button-color);
     border-radius: 5px;
-    padding: 2%;
     color: var(--button-color);
-    cursor: pointer;
-    -webkit-transition: all 0.2s;
-    -o-transition: all 0.2s;
-    transition: all 0.2s; }
-    .questions .answer-set label:nth-of-type(1) {
-      margin-top: 20px; }
-    .questions .answer-set label:hover {
+    -webkit-transition: color 0.2s, border 0.2s;
+    -o-transition: color 0.2s, border 0.2s;
+    transition: color 0.2s, border 0.2s;
+    /* Necessary to specify otherwise flex-wrap gets animated on resize and it looks ugly */ }
+    .answer-set label:hover {
       color: var(--button-select-color);
-      -webkit-transition: all 0.2s;
-      -o-transition: all 0.2s;
-      transition: all 0.2s; }
-    .questions .answer-set label span {
+      -webkit-transition: color 0.2s;
+      -o-transition: color 0.2s;
+      transition: color 0.2s;
+      /* Necessary to specify otherwise flex-wrap gets animated on resize and it looks ugly */ }
+    .answer-set label span {
       position: relative;
       z-index: 2; }
-    .questions .answer-set label.urban::after {
+    .answer-set label.urban::after {
       content: "";
       position: absolute;
       top: 0;
@@ -373,7 +426,7 @@ p {
       left: 0;
       opacity: 0.3;
       background: url(../assets/urban.jpg) center bottom/cover no-repeat; }
-    .questions .answer-set label.suburban::after {
+    .answer-set label.suburban::after {
       content: "";
       position: absolute;
       top: 0;
@@ -382,7 +435,7 @@ p {
       left: 0;
       opacity: 0.3;
       background: url(../assets/suburban.jpg) center center/cover no-repeat; }
-    .questions .answer-set label.rural::after {
+    .answer-set label.rural::after {
       content: "";
       position: absolute;
       top: 0;
@@ -391,17 +444,22 @@ p {
       left: 0;
       opacity: 0.3;
       background: url(../assets/rural.jpg) center center/cover no-repeat; }
+    .answer-set label.indifferent-density::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      opacity: 0.3;
+      background: url(../assets/indifferent-density.jpg) center center/cover no-repeat; }
 
-@media (min-width: 600px) {
-  .questions .answer-set label {
-    width: calc(50% - (10px / 2));
-    min-height: 14rem; }
-    .questions .answer-set label:nth-of-type(2) {
-      margin-top: 20px; }
-    .questions .answer-set label:nth-of-type(2n+1) {
-      margin-right: 10px; } }
+@media (min-width: 680px) {
+  .answer-set label {
+    height: calc((100% - 20px) / 2);
+    width: calc((100% - 20px) / 2); } }
 
 .results {
   height: 100vh;
-  min-height: 500px;
+  min-height: 600px;
   background: var(--section-bg-color); }
