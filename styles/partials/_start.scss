@@ -1,28 +1,46 @@
 .start-here {
   display: flex;
   flex-direction: column;
+  position: relative;
   height: 100vh;
   min-height: $section-mh;
-  background: var(--section-bg-color);
+  color: white;
+
+  &::before {
+    @include element-bg();
+    background: black;
+  }
 }
 
-.start {
+.start-text {
+  position: relative;
+  z-index: 9001;
+  color: white;
+
+  &--header {
+    font-size: 3.6rem;
+  }
+}
+
+.start-button {
+  margin: auto 0 40px 0;
   font-size: 2rem;
+  text-align: center;
   text-transform: uppercase;
   cursor: pointer;
   @include link-style();
 }
 
 .disclaimer {
-  margin: auto 0 0 0;
+  // margin: auto 0 0 0;
   font-size: 0.8rem;
   font-style: italic;
 }
 
 /* Font size set for awkwardly small screens; reset to intended font size once viewport is larger */
 @media (min-width: $sm-font-maxvw), (min-height: $sm-font-maxvh) {
-  .start {
-    font-size: 2.2rem;
+  .start-text--header {
+    font-size: 4.8rem;
   }
 
   .disclaimer {

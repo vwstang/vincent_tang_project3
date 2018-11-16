@@ -157,7 +157,7 @@ app.getActivity = () => app.rsltActivity = randify.arrElem(objDestInfo[app.rsltD
 // Initialize the application and add event listeners
 app.init = () => {
 
-  $("span.start").on("click", () => behaviour.nextSection("next"));
+  $(".start-button").on("click", () => behaviour.nextSection("next"));
 
   $("input[name=density]").on("click", () => {
     behaviour.markCompleted("density"); // Set current section value as completed

@@ -1,9 +1,11 @@
 // SASS Variables
 $tablet: 680px;
 $desktop: 968px;
-$section-mh: 600px;
+$large-screen: 1280px;
+$section-mw: 320px;
+$section-mh: 480px;
 $img-bg-mh: 100px;
-$container-mh: 500px;
+$container-mh: $section-mh - $img-bg-mh;
 $sm-font-maxvh: 800px;
 $sm-font-maxvw: 450px;
 $heading-font: 'Maven Pro';
@@ -38,6 +40,17 @@ $body-font: 'Karla';
   transition: color 0.2s, border 0.2s; /* Necessary to specify otherwise flex-wrap gets animated on resize and it looks ugly */
 }
 
+// For pseudo-elements only
+@mixin element-bg() {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.3;
+}
+
 // CSS Variables
 :root {
   --body-bg-color: whitesmoke;//#18314F;
@@ -56,7 +69,7 @@ html {
 }
 
 body {
-  min-width: 320px;
+  min-width: $section-mw;
   font-size: 1.6rem;
   font-family: $body-font, sans-serif;
   color: var(--text-color);
@@ -72,6 +85,7 @@ h1,h2,h3,h4,h5,h6,legend {
 
 p {
   margin-bottom: 0;
+  font-size: 1.6rem;
 }
 
 a {
@@ -85,6 +99,7 @@ a {
 .hide {
   display: none;
 }
+
 
 /* Button Styles */
 .shelter {
@@ -132,25 +147,26 @@ a {
   height: 70%;
   min-height: $container-mh;
 
-  &--start {
-    justify-content: flex-start;
-  }
-
+  &--start,
   &--result {
+    justify-content: center;
     height: 100%;
-    justify-content: flex-start;
   }
 }
 
 .wrapper {
   width: 100%;
-  min-width: 320px;
+  min-width: $section-mw;
   padding: 25px 5%;
+
+  &--start {
+    padding: 15px 5%;
+  }
 }
 
 /* Font size set for awkwardly small screens; reset to intended font size once viewport is larger */
 @media (min-width: $sm-font-maxvw), (min-height: $sm-font-maxvh) {
-  body {
+  body, p {
     font-size: 1.8rem;
   }
 
@@ -162,22 +178,21 @@ a {
 @media (min-width: $tablet) {
   .wrapper {
     padding: 50px 10%;
+
+    &--start {
+      padding: 30px 10%;
+    }
   }
 }
 
-@media (min-width: $desktop) {
+@media (min-width: $large-screen) {
   .page-wrapper {
     margin: 0 auto;
-    max-width: $desktop;
+    max-width: $large-screen;
   }
 
   .wrapper {
     margin: 0 auto;
-    max-width: $desktop;
-  }
-
-  .container--start {
-    height: 60%;
-    min-height: auto;
+    max-width: $large-screen;
   }
 }

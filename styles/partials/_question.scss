@@ -1,13 +1,3 @@
-@mixin input-bg() {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  opacity: 0.3;
-}
-
 .questions section {
   display: flex;
   flex-direction: column;
@@ -57,37 +47,65 @@
     padding: 2%;
     text-align: center;
     @include btn-inactive-state();
+    overflow: hidden;
     
     & span {
       position: relative;
       z-index: 2;
       font-size: 2rem;
     }
-    
-    &.urban::after {
-      @include input-bg();
-      background: url(../assets/urban.jpg) center bottom / cover no-repeat;
-    }
 
-    &.suburban::after {
-      @include input-bg();
-      background: url(../assets/suburban.jpg) center center / cover no-repeat;
-    }
-
-    &.rural::after {
-      @include input-bg();
-      background: url(../assets/rural.jpg) center center / cover no-repeat;
-    }
-
-    &.indifferent-density::after {
-      @include input-bg();
-      background: url(../assets/indifferent-density.jpg) center center / cover no-repeat;
+    // STORES ALL INPUT RADIO BUTTON BACKGROUND PSEUDO ELEMENTS FOR CODE FOLDING PURPOSES FOR READABILITY
+    &{
+      &.urban::before {
+        @include element-bg();
+        background: url(../assets/urban.jpg) center 90% / cover no-repeat;
+      }
+  
+      &.suburban::before {
+        @include element-bg();
+        background: url(../assets/suburban.jpg) center center / cover no-repeat;
+      }
+  
+      &.rural::before {
+        @include element-bg();
+        background: url(../assets/rural.jpg) center 45% / cover no-repeat;
+      }
+  
+      &.indifferent-density::before {
+        @include element-bg();
+        background: url(../assets/indifferent-density.jpg) center 45% / cover no-repeat;
+      }
+  
+      &.hot::before {
+        @include element-bg();
+        background: url(../assets/hot.jpg) center center / cover no-repeat;
+      }
+  
+      &.varying::before {
+        @include element-bg();
+        background: url(../assets/varying.jpg) center center / cover no-repeat;
+      }
+  
+      &.cold::before {
+        @include element-bg();
+        background: url(../assets/cold.jpg) center center / cover no-repeat;
+      }
+  
+      &.indifferent-climate::before {
+        @include element-bg();
+        background: url(../assets/indifferent-climate.jpg) center center / cover no-repeat;
+      }
     }
 
     &:hover {
       @include btn-hover-state();
+      
+      &::before {
+        transform: scale(1.3);
+        transition: transform 0.5s;
+      }
     }
-
   }
 }
 
@@ -98,7 +116,7 @@
   }
 }
 
-@media (min-width: $desktop) {
+@media (min-width: $large-screen) {
   // .answer-set label {
   //   min-height: 16rem;
   // }

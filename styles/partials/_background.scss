@@ -11,6 +11,7 @@
 
   &--density {
     background: url(https://source.unsplash.com/random/1000x501) center / cover no-repeat;
+    box-shadow: 0 -2px 2px white inset;
   }
 
   &--climate {
@@ -23,8 +24,8 @@
 }
 /* /Background Images */
 
-@media (min-width: $desktop) {
-  .background--start {
-    height: 40%;
-  }
+@media (min-width: $large-screen) {
+  // .background--start {
+  //   height: 40%;
+  // }
 }
