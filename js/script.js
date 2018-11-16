@@ -86,7 +86,7 @@ rsltPrinter.pasteHTML = (clipboardItem,htmlTag) => {
 // Generates the result section and append to DOM
 rsltPrinter.genResults = (destination, activityType, activity) => {
   const genHeader = destination;
-  const genInfo = `${destination} is a beautiful place in ${objDestInfo[destination].country}. It has a population of ${rsltPrinter.frmtNum(objDestInfo[destination].population)} (as of ${objDestInfo[destination].censusYear}), perfect for your love of ${app.userDensity} locations.`
+  const genInfo = `${destination} is a beautiful place in ${objDestInfo[destination].country}. It has a population of ${rsltPrinter.frmtNum(objDestInfo[destination].population)} (as of ${objDestInfo[destination].censusYear}), perfect for your love of ${app.userDensity} locations.`;
   const genAct = randify.strPhrase(destination,activityType,activity);
   $(".results").find(".wrapper").empty();
   rsltPrinter.pasteHTML(genHeader, "h2");

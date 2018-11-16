@@ -3,8 +3,7 @@
   & section {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
     margin: 0;
     height: 100vh;
     min-height: 500px;
@@ -13,37 +12,6 @@
 
     & .answer-set {
       width: 100%;
-    }
-    
-    // &.density {
-    // }
-
-    // &.climate {
-    // }
-
-    &.activity {
-
-      & .shelter {
-        display: flex;
-        justify-content: center;
-        margin-top: 60px;
-        background: var(--section-bg-color);
-
-        & .init-submit {
-          position: relative;
-          z-index: 1;
-          opacity: 1;
-          transition: opacity 1s;
-          border: 0;
-          border-radius: 5px;
-          padding: 5px 50px;
-        }
-
-        & .fallout {
-          z-index: -1;
-          opacity: 0;
-        }
-      }
     }
   }
 
