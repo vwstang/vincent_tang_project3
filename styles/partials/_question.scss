@@ -3,7 +3,7 @@
   & section {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     margin: 0;
     height: 100vh;
@@ -48,6 +48,7 @@
   }
 
   & legend {
+    width: 100%;
     padding: 0;
     font-size: 4rem;
   }
