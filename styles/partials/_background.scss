@@ -1,4 +1,4 @@
-/* Background Images */
+/* Section Banner Images */
 .background {
   height: 30%;
   min-height: $img-bg-mh;
@@ -22,7 +22,7 @@
     background: url(https://source.unsplash.com/random/1000x503) center / cover no-repeat;
   }
 }
-/* /Background Images */
+/* /Section Banner Images */
 
 @media (min-width: $large-screen) {
   // .background--start {

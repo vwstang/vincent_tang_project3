@@ -1,4 +1,6 @@
-// SASS Variables
+//== SASS Variables ==//
+
+//-- Viewport Size Variables --//
 $tablet: 680px;
 $desktop: 968px;
 $large-screen: 1280px;
@@ -8,8 +10,10 @@ $img-bg-mh: 100px;
 $container-mh: $section-mh - $img-bg-mh;
 $sm-font-maxvh: 800px;
 $sm-font-maxvw: 450px;
-$heading-font: 'Maven Pro';
-$body-font: 'Karla';
+
+//-- Font Variables --//
+$heading-font-stack: 'Maven Pro', serif;
+$body-font-stack: 'Karla', sans-serif;
 
 @mixin link-style() {
   color: var(--link-color);
@@ -51,15 +55,16 @@ $body-font: 'Karla';
   opacity: 0.3;
 }
 
-// CSS Variables
+// CSS Variables for colors
 :root {
-  --body-bg-color: whitesmoke;//#18314F;
-  --section-bg-color: white;
+  --body-bg-color: #6F6F6F;
+  --section-bg-color: #FFF;
+  --section-shadow-color: #2C2C2C;
   --header-color: #384E77;
-  --text-color: black;
-  --link-color: #3C6E71;
+  --text-color: #000;
+  --link-color: #4B898D;
   --link-hover-color: #F46036;
-  --button-color: black;
+  --button-color: #000;
   --button-select-color: #F46036;
 }
 
@@ -71,14 +76,14 @@ html {
 body {
   min-width: $section-mw;
   font-size: 1.6rem;
-  font-family: $body-font, sans-serif;
+  font-family: $body-font-stack;
   color: var(--text-color);
   background: var(--body-bg-color);
 }
 
 h1,h2,h3,h4,h5,h6,legend {
   color: var(--header-color);
-  font-family: $heading-font, serif;
+  font-family: $heading-font-stack;
   font-weight: bold;
   font-size: 2.4rem;
 }
@@ -189,6 +194,7 @@ a {
   .page-wrapper {
     margin: 0 auto;
     max-width: $large-screen;
+    box-shadow: 5px 0 15px var(--section-shadow-color), -5px 0 15px var(--section-shadow-color);
   }
 
   .wrapper {

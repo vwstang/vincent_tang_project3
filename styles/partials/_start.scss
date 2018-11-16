@@ -8,6 +8,7 @@
 
   &::before {
     @include element-bg();
+    opacity: 0.6;
     background: black;
   }
 }

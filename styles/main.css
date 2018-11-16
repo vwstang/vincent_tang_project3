@@ -154,13 +154,14 @@ a {
 
 /*** /Initialize CSS ***/
 :root {
-  --body-bg-color: whitesmoke;
-  --section-bg-color: white;
+  --body-bg-color: #6F6F6F;
+  --section-bg-color: #FFF;
+  --section-shadow-color: #2C2C2C;
   --header-color: #384E77;
-  --text-color: black;
-  --link-color: #3C6E71;
+  --text-color: #000;
+  --link-color: #4B898D;
   --link-hover-color: #F46036;
-  --button-color: black;
+  --button-color: #000;
   --button-select-color: #F46036; }
 
 html {
@@ -293,12 +294,14 @@ a {
 @media (min-width: 1280px) {
   .page-wrapper {
     margin: 0 auto;
-    max-width: 1280px; }
+    max-width: 1280px;
+    -webkit-box-shadow: 5px 0 15px var(--section-shadow-color), -5px 0 15px var(--section-shadow-color);
+    box-shadow: 5px 0 15px var(--section-shadow-color), -5px 0 15px var(--section-shadow-color); }
   .wrapper {
     margin: 0 auto;
     max-width: 1280px; } }
 
-/* Background Images */
+/* Section Banner Images */
 .background {
   height: 30%;
   min-height: 100px;
@@ -316,7 +319,7 @@ a {
   .background--activity {
     background: url(https://source.unsplash.com/random/1000x503) center/cover no-repeat; }
 
-/* /Background Images */
+/* /Section Banner Images */
 .start-here {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -337,6 +340,7 @@ a {
     bottom: 0;
     left: 0;
     opacity: 0.3;
+    opacity: 0.6;
     background: black; }
 
 .start-text {
