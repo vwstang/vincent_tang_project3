@@ -5,15 +5,14 @@ $desktop: 968px;
 
 // CSS Variables
 :root {
-  --body-bg-color: #18314F;
-  --section-bg-color: whitesmoke;
+  --body-bg-color: whitesmoke;//#18314F;
+  --section-bg-color: white;
   --header-color: #384E77;
   --text-color: black;
   --link-color: #3C6E71;
-  --link-hover-color: #C05746;
-  --button-color: black; //011638;
-  --button-select-color: #C05746;
-  // --button-selected-color: #ECA400;
+  --link-hover-color: #F46036;
+  --button-color: black;
+  --button-select-color: #F46036;
 }
 
 html {
@@ -30,8 +29,10 @@ body {
 }
 
 h1,h2,h3,h4,h5,h6,legend {
-  font-family: 'Arvo', serif;
   color: var(--header-color);
+  font-family: 'Arvo', serif;
+  font-weight: bold;
+  font-size: 2.6rem;
 }
 
 p {
@@ -72,7 +73,7 @@ p {
 
 /* Background Images */
 .background {
-  height: 35%;
+  height: 30%;
   width: 100%;
   
   &--start {
@@ -97,7 +98,7 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 65%;
+  height: 70%;
 
   &--start {
     justify-content: flex-start;
@@ -112,27 +113,26 @@ p {
 .wrapper {
   width: 100%;
   min-width: 320px;
-  padding: 20px 5%;
+  padding: 50px 5%;
 }
 
 @media (min-width: $tablet) {
-  .wrapper {
-    padding: 40px 10%;
-  }
+
 }
 
 @media (min-width: $desktop) {
   .page-wrapper {
     margin: 0 auto;
     max-width: $desktop;
-    box-shadow: 5px 0 50px gray,
-                0 5px 50px gray,
-                -5px 0 50px gray,
-                0 -5px 50px gray;
+    // box-shadow: 5px 0 50px white,
+    //             0 5px 50px white,
+    //             -5px 0 50px white,
+    //             0 -5px 50px white;
   }
 
   .wrapper {
     margin: 0 auto;
     max-width: $desktop;
+    padding: 80px 8%;
   }
 }

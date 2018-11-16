@@ -1,3 +1,13 @@
+@mixin btn-bg() {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.3;
+}
+
 .questions {
 
   & section {
@@ -18,7 +28,6 @@
   & legend {
     width: 100%;
     padding: 0;
-    font-size: 4rem;
   }
 
   & .answer-set {
@@ -41,7 +50,8 @@
     & label {
       display: flex;
       align-items: center;
-      min-height: 4rem;
+      min-height: 8rem;
+      position: relative;
       margin-top: 10px;
       width: 100%;
       border: 1px solid var(--button-color);
@@ -59,6 +69,51 @@
         color: var(--button-select-color);
         transition: all 0.2s;
       }
+
+      & span {
+        position: relative;
+        z-index: 2;
+      }
+      
+      &.urban::after {
+        @include btn-bg();
+        background: url(../assets/urban.jpg) center bottom / cover no-repeat;
+      }
+
+      &.suburban::after {
+        @include btn-bg();
+        background: url(../assets/suburban.jpg) center center / cover no-repeat;
+      }
+
+      &.rural::after {
+        @include btn-bg();
+        background: url(../assets/rural.jpg) center center / cover no-repeat;
+      }
+
+      &.indifferent--density {
+
+      }
     }
+  }
+}
+
+@media (min-width: $tablet) {
+  .questions .answer-set label {
+    width: calc(50% - (10px / 2));
+    min-height: 14rem;
+
+    &:nth-of-type(2) {
+      margin-top: 20px;
+    }
+
+    &:nth-of-type(2n+1) {
+      margin-right: 10px;
+    }
+  }
+}
+
+@media (min-width: $desktop) {
+  .questions .answer-set label {
+    // min-height: 16rem;
   }
 }
