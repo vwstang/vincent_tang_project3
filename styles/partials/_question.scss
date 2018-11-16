@@ -57,11 +57,7 @@
     padding: 2%;
     text-align: center;
     @include btn-inactive-state();
-
-    &:hover {
-      @include btn-hover-state();
-    }
-
+    
     & span {
       position: relative;
       z-index: 2;
@@ -87,6 +83,11 @@
       @include input-bg();
       background: url(../assets/indifferent-density.jpg) center center / cover no-repeat;
     }
+
+    &:hover {
+      @include btn-hover-state();
+    }
+
   }
 }
 

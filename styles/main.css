@@ -304,7 +304,9 @@ a {
 .background {
   height: 30%;
   min-height: 100px;
-  width: 100%; }
+  width: 100%;
+  -webkit-box-shadow: 0 2px 2px white inset, 0 -2px 2px white inset;
+  box-shadow: 0 2px 2px white inset, 0 -2px 2px white inset; }
   .background--start {
     background: url(../assets/start.jpg) center 30%/cover no-repeat; }
   .background--density {
@@ -431,12 +433,6 @@ a {
     -o-transition: color 0.2s, border 0.2s;
     transition: color 0.2s, border 0.2s;
     /* Necessary to specify otherwise flex-wrap gets animated on resize and it looks ugly */ }
-    .answer-set label:hover {
-      color: var(--button-select-color);
-      -webkit-transition: color 0.2s;
-      -o-transition: color 0.2s;
-      transition: color 0.2s;
-      /* Necessary to specify otherwise flex-wrap gets animated on resize and it looks ugly */ }
     .answer-set label span {
       position: relative;
       z-index: 2;
@@ -477,6 +473,12 @@ a {
       left: 0;
       opacity: 0.3;
       background: url(../assets/indifferent-density.jpg) center center/cover no-repeat; }
+    .answer-set label:hover {
+      color: var(--button-select-color);
+      -webkit-transition: color 0.2s;
+      -o-transition: color 0.2s;
+      transition: color 0.2s;
+      /* Necessary to specify otherwise flex-wrap gets animated on resize and it looks ugly */ }
 
 @media (min-width: 680px) {
   .answer-set label {
