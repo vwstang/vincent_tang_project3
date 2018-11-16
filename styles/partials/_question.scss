@@ -11,6 +11,7 @@
 .question {
   width: 100%;
   padding: 0;
+  font-size: 2.2rem;
 }
 
 .answer-set {
@@ -19,7 +20,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-content: space-between;
-  height: 80%;
+  height: 75%;
   width: 100%;
   margin: auto 0;
 
@@ -40,7 +41,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 6rem;
+    min-height: 5rem;
     position: relative;
     height: calc((100% - 60px) / 4);
     width: 100%;
@@ -55,7 +56,8 @@
       font-size: 2rem;
     }
 
-    // STORES ALL INPUT RADIO BUTTON BACKGROUND PSEUDO ELEMENTS FOR CODE FOLDING PURPOSES FOR READABILITY
+    // INSIDE HERE ARE RADIO BUTTON BACKGROUND PSEUDO ELEMENT STYLES
+    // STORED IN EMPTY &{} FOR CODE FOLDING PURPOSES FOR READABILITY
     &{
       &.urban::before {
         @include element-bg();
@@ -89,7 +91,7 @@
   
       &.cold::before {
         @include element-bg();
-        background: url(../assets/cold.jpg) center center / cover no-repeat;
+        background: url(../assets/cold.jpg) center 40% / cover no-repeat;
       }
   
       &.indifferent-climate::before {
