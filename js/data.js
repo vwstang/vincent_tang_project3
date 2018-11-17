@@ -13,7 +13,7 @@ const objDestinations = {
   },
   rural: {
     hot: ["Cayman Islands", "Mamanuca Islands", "Sidi Bou Said"],
-    varying: ["Óbidos", "Santa Maddalena", "Stepantsminda"],
+    varying: ["Óbidos", "Villnöß", "Stepantsminda"],
     cold: ["Yellowknife", "Shirakawa Village", "Zermatt"]
   }
 };
@@ -241,13 +241,18 @@ const objDestInfo = {
       ],
     }
   },
-  "Santa Maddalena": {
+  "Villnöß": {
     country: "Italy",
-    population: 0,
-    censusYear: 0,
+    population: 2552,
+    censusYear: 2010,
     activities: {
-      sightseeing: ["place1", "place2"],
-      food: ["food1", "food2"],
+      sightseeing: [
+        "Sass Pordoi",
+        "Passo Sella"],
+      food: [
+        "",
+        ""
+      ],
     }
   },
   Stepantsminda: {
@@ -255,8 +260,16 @@ const objDestInfo = {
     population: 1326,
     censusYear: 2014,
     activities: {
-      sightseeing: ["place1", "place2"],
-      food: ["food1", "food2"],
+      sightseeing: [
+        "Gergeti Trinity Church",
+        "Gveleti Waterfalls",
+        "Mount Kazbek"
+      ],
+      food: [
+        "khinkali (Georgian dumplings)",
+        "khachapuri (cheese-filled bread)",
+        "kupati (pork sausage)"
+      ],
     }
   },
   "Shirakawa Village": {
@@ -281,8 +294,16 @@ const objDestInfo = {
     population: 178102,
     censusYear: 2011,
     activities: {
-      sightseeing: ["place1", "place2"],
-      food: ["food1", "food2"],
+      sightseeing: [
+        "Diocletian's Palace",
+        "St. Duje's Cathedral",
+        "Marjan"
+      ],
+      food: [
+        "pašticada (Dalmatian beef stew)",
+        "paradizet (Dalmatian dessert)",
+        "fritula (fried sweet dumpling)"
+      ],
     }
   },
   "Mamanuca Islands": {
@@ -290,8 +311,16 @@ const objDestInfo = {
     population: 900,
     censusYear: 2017,
     activities: {
-      sightseeing: ["place1", "place2"],
-      food: ["food1", "food2"],
+      sightseeing: [
+        "Solevu Village",
+        "Caves of Monuriki Island (film site of Tom Hanks movie Cast Away)",
+        "Tropical Forests on Ngalito Island"
+      ],
+      food: [
+        "kava (Fiji national drink)",
+        "kokoda (mahi-mahi marinated in lemon or lime juice)",
+        "palusami (fish or corned beef with coconut milk baked in taro leaves)"
+      ],
     }
   },
   "Sidi Bou Said": {
@@ -299,8 +328,16 @@ const objDestInfo = {
     population: 5911,
     censusYear: 2014,
     activities: {
-      sightseeing: ["place1", "place2"],
-      food: ["food1", "food2"],
+      sightseeing: [
+        "Palace Dar Nejma Ezzahra",
+        "Carthaginian Ruins",
+        "Baths of Antoninus Pius"
+      ],
+      food: [
+        "brik (savoury filled pastries)",
+        "grilled merguez (spicy sausage)",
+        "mana-ich (Lebanese-style flat bread)"
+      ],
     }
   },
   "Zermatt": {
