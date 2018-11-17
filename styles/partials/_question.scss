@@ -11,7 +11,7 @@
 .question {
   width: 100%;
   padding: 0;
-  font-size: 2.2rem;
+  font-size: 2rem;
 }
 
 .answer-set {
@@ -54,6 +54,7 @@
       position: relative;
       z-index: 2;
       font-size: 1.8rem;
+      font-weight: bold;
     }
 
     // INSIDE HERE ARE RADIO BUTTON BACKGROUND PSEUDO ELEMENT STYLES
@@ -86,7 +87,7 @@
   
       &.varying::before {
         @include element-bg();
-        background: url(../assets/varying.jpg) center center / cover no-repeat;
+        background: url(../assets/varying.jpg) center 70% / cover no-repeat;
       }
   
       &.cold::before {
@@ -96,7 +97,22 @@
   
       &.indifferent-climate::before {
         @include element-bg();
-        background: url(../assets/indifferent-climate.jpg) center center / cover no-repeat;
+        background: url(../assets/indifferent-climate.jpg) center 70% / cover no-repeat;
+      }
+
+      &.sightseeing::before {
+        @include element-bg();
+        background: url(../assets/sightseeing.jpg) center 30% / cover no-repeat;
+      }
+
+      &.food::before {
+        @include element-bg();
+        background: url(../assets/food.jpg) center center / cover no-repeat;
+      }
+
+      &.indifferent-activity::before {
+        @include element-bg();
+        background: url(../assets/indifferent-activity.jpg) center center / cover no-repeat;
       }
     }
 
