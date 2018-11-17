@@ -25,8 +25,16 @@ const objDestInfo = {
     population: 673469,
     censusYear: 2018,
     activities: {
-      sightseeing: ["oslosight1", "oslosight2", "oslosight3"],
-      food: ["oslofood1", "oslofood2", "oslofood3"]
+      sightseeing: [
+        "Vigeland Sculpture Park",
+        "Akershus Fortress",
+        "Nordmarka"
+      ],
+      food: [
+        "røkt laks (smoked salmon)",
+        "kjøttboller (meatballs)",
+        "krumkake (waffle cookie)"
+      ]
     }
   },
   Brussels: {
@@ -35,14 +43,14 @@ const objDestInfo = {
     censusYear: 2017,
     activities: {
       sightseeing: [
-        "brusselssight1",
-        "brusselssight2",
-        "brusselssight3"
+        "Grote Markt",
+        "Belgian Royal Museum of Fine Arts",
+        "Parc du Cinquantenaire"
       ],
       food: [
-        "brusselsfood1",
-        "brusselsfood2",
-        "brusselsfood3"
+        "crevettes frises (gray shrimp)",
+        "speculoos (spiced shortbread biscuits)",
+        "moules-frites (mussels with fries)"
       ]
     }
   },
@@ -69,10 +77,14 @@ const objDestInfo = {
     censusYear: 2015,
     activities: {
       sightseeing: [
-        "Óbidos Castle; walk the wall",
-        "obidossight2",
-        "obidossight3"],
-      food: ["Ginja"]
+        "Óbidos Castle",
+        "Porta de Vila",
+        "Igreja de Santa Maria"],
+      food: [
+        "ginja (wine)",
+        "caldo verde (Portuguese green soup)",
+        "salada de polvo (octopus salad)"
+      ]
     }
   },
   Seville: {
@@ -85,7 +97,11 @@ const objDestInfo = {
         "Real Alcázar",
         "Catedral de Sevilla"
       ],
-      food: ["tapas"]
+      food: [
+        "solomillo al whiskey (pork loin with whiskey sauce)",
+        "espinacas con garbanzos (spinach with chick peas)",
+        "jamon iberico (Iberian ham)"
+      ]
     }
   },
   Reykjavík: {
@@ -93,8 +109,16 @@ const objDestInfo = {
     population: 122853,
     censusYear: 2016,
     activities: {
-      sightseeing: ["reyksight1","reyksight2"],
-      food: ["food1", "food2"]
+      sightseeing: [
+        "Hallgrímskirkja Church",
+        "Tjörnin Pond",
+        "Blue Lagoon"
+      ],
+      food: [
+        "skyr (icelandic yogurt)",
+        "hákarl (fermented shark)",
+        "harðfiskur (dried fish)"
+      ]
     }
   },
   Harbin: {

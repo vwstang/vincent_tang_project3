@@ -13,18 +13,26 @@
   }
 }
 
+.start-header {
+  position: relative;
+  z-index: 9001;
+  color: white;
+  font-size: 3.6rem;
+}
+
+.text-container {
+  margin: auto 0 40px 0;
+}
+
 .start-text {
   position: relative;
   z-index: 9001;
   color: white;
-
-  &--header {
-    font-size: 3.6rem;
-  }
 }
 
 .start-button {
-  margin: auto 0 40px 0;
+  margin: 40px auto 40px auto;
+  padding: 5px 10px;
   font-size: 2rem;
   text-align: center;
   text-transform: uppercase;
@@ -46,5 +54,11 @@
 
   .disclaimer {
     font-size: 1.2rem;
+  }
+}
+
+@media (min-width: $tablet) {
+  .start-text {
+    text-align: right;
   }
 }
