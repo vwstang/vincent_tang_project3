@@ -394,6 +394,9 @@ a {
     transition: color 0.2s; }
 
 .disclaimer {
+  position: relative;
+  z-index: 9001;
+  color: white;
   font-size: 0.8rem;
   font-style: italic; }
 

@@ -127,14 +127,14 @@ const objDestInfo = {
     censusYear: 2010,
     activities: {
       sightseeing: [
-        "harbinsight1",
-        "harbinsight2",
-        "harbinsight3"
+        "Ice and Snow World",
+        "St. Sophia Church",
+        "Yabuli Ski Resort"
       ],
       food: [
-        "harbinfood1",
-        "harbinfood2",
-        "harbinfood3"
+        "dalieba (Chinese bread made to resemble Russian rye bread)",
+        "di san xian (fried potato, eggplant, pepper in garlic sauce)",
+        "braised pork"
       ]
     }
   },
@@ -143,8 +143,16 @@ const objDestInfo = {
     population: 130894,
     censusYear: 2016,
     activities: {
-      sightseeing: [""],
-      food: ["food1", "food2"]
+      sightseeing: [
+        "The Nordkettenbahnen",
+        "Swarovski Crystal Worlds",
+        "Maria-Theresien Strasse"
+      ],
+      food: [
+        "tafelspitz (boiled beef served with horseradish sauce",
+        "Speckknödel (Austrian bacon dumplings)",
+        "Kiachl (German fried dough pastry)"
+      ]
     }
   },
   Yellowknife: {
@@ -153,9 +161,15 @@ const objDestInfo = {
     censusYear: 2016,
     activities: {
       sightseeing: [
-        "Aurora Borealis is visible throughout winter months"
+        "Aurora Village",
+        "Cameron Falls Trail",
+        "Northern Arts and Cultural Center"
       ],
-      food: ["food1", "food2"]
+      food: [
+        "bison",
+        "bannock",
+        "arctic char (fish)"
+      ]
     }
   },
   Staycation: {
@@ -176,12 +190,20 @@ const objDestInfo = {
     }
   },
   "Cayman Islands": {
-    country: null,
+    country: "British Overseas Territory",
     population: 60765,
     censusYear: 2016,
     activities: {
-      sightseeing: ["beaches", "place2"],
-      food: ["drinks", "place2"]
+      sightseeing: [
+        "Cayman Turtle Centre: Island Wildlife Encounter",
+        "Seven Mile Beach",
+        "Eden Rock & Devil's Grotto"
+      ],
+      food: [
+        "cassava cake",
+        "cracked conch",
+        "fish rundown"
+      ]
     }
   },
   Perth: {
@@ -207,8 +229,16 @@ const objDestInfo = {
     population: 0,
     censusYear: 0,
     activities: {
-      sightseeing: ["place1", "place2"],
-      food: ["food1", "food2"],
+      sightseeing: [
+        "Petronas Twin Towers",
+        "Batu Caves",
+        "Thean Hou Temples"
+      ],
+      food: [
+        "nasi lemak (Malaysian rice dish)",
+        "rendang (spicy meat dish)",
+        "asam laksa (spicy noodle soup)"
+      ],
     }
   },
   "Santa Maddalena": {
@@ -234,8 +264,16 @@ const objDestInfo = {
     population: 1668,
     censusYear: 2017,
     activities: {
-      sightseeing: ["place1", "place2"],
-      food: ["food1", "food2"],
+      sightseeing: [
+        "Ogimachi Castle Observation Deck",
+        "Ogimachi Gasshi-zukuri Minka-en Museum (open air museum with traditional style farmhouses)",
+        "Mount Haku"
+      ],
+      food: [
+        "tochi mochi (Japanese horse chestnut dessert)",
+        "Hida beef soba (Japanese thin buckwheat noodles)",
+        "Hida beef onigiri (Japanese rice balls)"
+      ],
     }
   },
   Split: {
@@ -268,10 +306,18 @@ const objDestInfo = {
   "Zermatt": {
     country: "Switzerland",
     population: 5643,
-    censusYear: 0,
+    censusYear: 2017,
     activities: {
-      sightseeing: ["place1", "place2"],
-      food: ["food1", "food2"],
+      sightseeing: [
+        "Matterhorn",
+        "Gornergrat",
+        "Matterhorn Museum - Zermatlantis"
+      ],
+      food: [
+        "schüblig (dried sausage)",
+        "rösti (Swiss potato fritter)",
+        "raclettissima pizza (cheese with silverskin onions and gherkins pizza)"
+      ],
     }
   },
   "Maui": {
@@ -279,8 +325,16 @@ const objDestInfo = {
     population: 144444,
     censusYear: 2010,
     activities: {
-      sightseeing: ["place1", "place2"],
-      food: ["food1", "food2"],
+      sightseeing: [
+        "Haleakala Crater",
+        "Road to Hana",
+        "Waianapanapa State Park"
+      ],
+      food: [
+        "poi (paste made from taro)",
+        "laulau (pork wrapped in taro leaves)",
+        "poke (diced raw fish)"
+      ],
     }
   },
   "Stuttgart": {
@@ -288,8 +342,16 @@ const objDestInfo = {
     population: 632743,
     censusYear: 2017,
     activities: {
-      sightseeing: ["Porsche Museum", "place2"],
-      food: ["food1", "food2"],
+      sightseeing: [
+        "Porsche Museum",
+        "Wilhelma Zoological-Botanical Garden",
+        "Killesbergturm"
+      ],
+      food: [
+        "schwarzwälder schinken (black forest ham)",
+        "spätzle (egg noodles)",
+        "maultaschen (ravioli filled with minced meat, onions, spinach)"
+      ],
     }
   },
   "Bordeaux": {
@@ -297,17 +359,33 @@ const objDestInfo = {
     population: 250776,
     censusYear: 2016,
     activities: {
-      sightseeing: ["place1", "place2"],
-      food: ["food1", "food2"],
+      sightseeing: [
+        "Place de la Bourse",
+        "Quais de Bordeaux",
+        "La Cité du Vin"
+      ],
+      food: [
+        "entrecote bordelaise (steak cooked in red wine sauce)",
+        "canalés (vanilla and rum flavoured pastries)",
+        "white asparagus"
+      ],
     }
   },
   "Vientiane": {
     country: "Laos",
-    population: 0,
-    censusYear: 0,
+    population: 760000,
+    censusYear: 2015,
     activities: {
-      sightseeing: ["place1", "place2"],
-      food: ["food1", "food2"],
+      sightseeing: [
+        "Pha That Luang",
+        "Patuxai",
+        "Haw Phra Kaew"
+      ],
+      food: [
+        "klao niaw (sticky rice)",
+        "laap (meat salad)",
+        "sai oua (sausage snack)"
+      ],
     }
   },
   "Jeju Island": {
@@ -315,8 +393,16 @@ const objDestInfo = {
     population: 621550,
     censusYear: 2014,
     activities: {
-      sightseeing: ["place1", "place2"],
-      food: ["food1", "food2"],
+      sightseeing: [
+        "Mount Hallasan",
+        "Teddy Bear Museum",
+        "Cheonjeyeon Waterfall and Seonimgro Bridge"
+      ],
+      food: [
+        "galchiguk (hairtail fish soup)",
+        "jeonbokjuk (rice porridge with abalone)",
+        "kkwong-memil guksu (buckwheat noodles with pheasant meat)"
+      ],
     }
   },
   "Venice": {
@@ -324,8 +410,16 @@ const objDestInfo = {
     population: 261905,
     censusYear: 2017,
     activities: {
-      sightseeing: ["place1", "place2"],
-      food: ["food1", "food2"],
+      sightseeing: [
+        "Bascilia di San Marco",
+        "Burano Island",
+        "Ponte de Rilato"
+      ],
+      food: [
+        "sarde in saor (sweet and sour sardines)",
+        "risotto al nero di seppia (squid ink risotto)",
+        "bigoli in salsa (whole wheat pasta with anchovie sauce)"
+      ],
     }
   },
   "Minsk": {
@@ -333,8 +427,16 @@ const objDestInfo = {
     population: 1982444,
     censusYear: 2018,
     activities: {
-      sightseeing: ["place1", "place2"],
-      food: ["food1", "food2"],
+      sightseeing: [
+        "Bolshoi Opera and Ballet Theatre of Belarus",
+        "Cathedral of the Holy Spirit",
+        "National Library of Belarus"
+      ],
+      food: [
+        "khaladnik (chilled beetroot borscht)",
+        "draniki (essential potato latkes)",
+        "babka (potato stew)"
+      ],
     }
   }
 };

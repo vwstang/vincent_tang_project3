@@ -41,7 +41,9 @@
 }
 
 .disclaimer {
-  // margin: auto 0 0 0;
+  position: relative;
+  z-index: 9001;
+  color: white;
   font-size: 0.8rem;
   font-style: italic;
 }
