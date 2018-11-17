@@ -3,7 +3,7 @@
   height: 30%;
   min-height: $img-bg-mh;
   width: 100%;
-  box-shadow: 0 2px 2px white inset, 0 -2px 2px white inset;
+  // box-shadow: 0 2px 2px white inset, 0 -2px 2px white inset;
   
   &--start {
     background: url(../assets/start.jpg) center 30% / cover no-repeat;
@@ -11,7 +11,7 @@
 
   &--density {
     background: url(https://source.unsplash.com/random/1000x501) center / cover no-repeat;
-    box-shadow: 0 -2px 2px white inset;
+    // box-shadow: 0 -2px 2px white inset;
   }
 
   &--climate {
