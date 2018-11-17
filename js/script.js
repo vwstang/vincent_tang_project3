@@ -70,7 +70,7 @@ rsltPrinter.frmtNum = num => {
   const strNum = num.toString();
   let result = "";
   for (let i = strNum.length - 1; i >= 0; --i) {
-    (i % 3 === 0 && i !== 0) ? result = "," + strNum[i] + result : result = strNum[i] + result;
+    ((strNum.length - i) % 3 === 0 && i !== 0) ? result = "," + strNum[i] + result : result = strNum[i] + result;
   }
   return result;
 }

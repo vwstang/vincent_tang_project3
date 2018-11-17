@@ -27,7 +27,7 @@ $body-font-stack: 'Karla', sans-serif;
 
 @mixin btn-inactive-state() {
   cursor: pointer;
-  border: 1px solid var(--button-color);
+  border: 2px solid var(--button-color);
   border-radius: 5px;
   color: var(--button-color);
   transition: color 0.2s, border 0.2s; /* Necessary to specify otherwise flex-wrap gets animated on resize and it looks ugly */
@@ -40,7 +40,7 @@ $body-font-stack: 'Karla', sans-serif;
 
 @mixin btn-active-state() {
   color: var(--button-select-color);
-  border: 1px solid var(--button-select-color);
+  border: 2px solid var(--button-select-color);
   transition: color 0.2s, border 0.2s; /* Necessary to specify otherwise flex-wrap gets animated on resize and it looks ugly */
 }
 
@@ -125,16 +125,19 @@ a {
   display: flex;
   justify-content: center;
   background: var(--section-bg-color);
-
+  
   & .init-submit {
     display: flex;
+    justify-content: center;
     align-items: center;
     position: relative;
-    z-index: 1;
+    z-index: 2;
+    width: 100%;
     opacity: 1;
-    transition: opacity 1s;
+    transition: all 0.5s;
     line-height: 4rem;
-    padding: 0 50px;
+    font-weight: bold;
+    background: var(--section-bg-color);
     @include btn-inactive-state();
 
     &:hover {
@@ -152,8 +155,9 @@ a {
   }
 
   & .fallout {
-    z-index: -1;
+    z-index: -2000;
     opacity: 0;
+    transition: all 0.5s;
   }
 }
 /* /Button Styles */
