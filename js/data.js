@@ -150,8 +150,8 @@ const objDestInfo = {
       ],
       food: [
         "tafelspitz (boiled beef served with horseradish sauce",
-        "Speckknödel (Austrian bacon dumplings)",
-        "Kiachl (German fried dough pastry)"
+        "speckknödel (Austrian bacon dumplings)",
+        "kiachl (German fried dough pastry)"
       ]
     }
   },
@@ -498,23 +498,25 @@ const objDestInfo = {
 // 2D array of phrases to be randomized with food activities
 // Used with randify.strPhrase to generate coherent, albeit generic, sentences.
 // Token Characters replaced by randify.strPhrase
-// "@" - destination name
-// "%" - destination country
-// "(" - destination population
-// ")" - destination census year
-// "^" - activity
+// "#dest" - destination name
+// "#country" - destination country
+// "#population" - destination population
+// "#year" - destination census year
+// "#activity" - activity
 const arrPhrases = {
   info: [
-    ["A place to check out in ", "%", " is ", "@", ". It has a population of ", "(", " as of ", ")", "."]
+    ["A place to check out in ", "#country", " is ", "#dest", ". It has a population of ", "#population", " as of ", "#year", "."],
+    ["Go to ", "#country", " and travel to a place called ", "#dest", ". It's a great place with a population of ", "#population", " as of ", "#year", "."],
+    ["Ever heard of ", "#dest", "? It's in ", "#country", ". It's home to ", "#population", " people (as of ", "#year", ")."]
   ],
   sightseeing: [
-    ["There is a cool place called ", "^", " in ", "@",". Go check it out! Bring back some cool pictures."],
-    ["I heard that ", "^", " is worth visiting. It's totally Instagram worthy, so you can get some sick pics and post to your feed!"],
-    ["You haven't been to ", "@"," if you haven't seen ", "^", "."]
+    ["There is a cool place called ", "#activity", " in ", "#dest",". Go check it out! Bring back some cool pictures."],
+    ["I heard that ", "#activity", " is worth visiting. It's totally Instagram worthy, so you can get some sick pics and post to your feed!"],
+    ["You haven't been to ", "#dest"," if you haven't seen ", "#activity", ". Look it up on Google and tell me you'd want to check it out."]
   ],
   food: [
-    ["If you've ever heard of ", "^", ", then you're in luck, because it's something you can easily find in ", "@", "."],
-    ["As for food and drinks, you HAVE to go try ", "^", " when you're there. Trust me, it'll knock your socks off!"],
-    ["When I went to ", "@", " back in [INSERT NON-EXISTENT DATE OF TRIP], I really enjoyed ", "^", ". You should definitely get it on your trip there."]
+    ["If you've ever heard of ", "#activity", ", then you're in luck, because it's something you can easily find in ", "#dest", "."],
+    ["As for food and drinks, you HAVE to go try ", "#activity", " when you're there. Trust me, it'll knock your socks off!"],
+    ["When I went to ", "#dest", " back in [INSERT NON-EXISTENT DATE OF TRIP], I really enjoyed ", "#activity", ". You should definitely get it on your trip there."]
   ]
 };

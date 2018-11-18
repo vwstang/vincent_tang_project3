@@ -27,20 +27,21 @@ randify.strPhrase = (destination,activityType,activity) => {
 
   const result = arrPhrase.reduce((accum,elem) => {
     switch (elem) {
-      case "^":
+      case "#activity":
         accum += activity;
         break;
-      case "@":
+      case "#dest":
         accum += destination;
         break;
-      case "%":
+      case "#country":
         accum += objDestInfo[destination].country;
         break;
-      case "(":
+      case "#population":
         accum += rsltPrinter.frmtNum(objDestInfo[destination].population);
         break;
-      case ")":
+      case "#year":
         accum += objDestInfo[destination].censusYear;
+        break;
       default:
         accum += elem;
         break;
@@ -175,7 +176,7 @@ app.init = () => {
     behaviour.nextSection("next");
   });
 
-  $("input[name=activity").on("click", () => $(".init-submit").removeClass("fallout"));
+  $("input[name=activity").on("click", () => $(".submit").removeClass("fallout"));
 
   $(".questions").on("submit", e => {
     e.preventDefault();

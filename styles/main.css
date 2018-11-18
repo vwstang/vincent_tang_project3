@@ -224,7 +224,7 @@ a {
   -ms-flex-pack: center;
   justify-content: center;
   background: var(--section-bg-color); }
-  .shelter .init-submit {
+  .shelter .submit {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -252,9 +252,9 @@ a {
     -o-transition: color 0.2s, border 0.2s;
     transition: color 0.2s, border 0.2s;
     /* Necessary to specify otherwise flex-wrap gets animated on resize and it looks ugly */ }
-    .shelter .init-submit:hover {
+    .shelter .submit:hover {
       color: var(--button-select-color); }
-    .shelter .init-submit:focus, .shelter .init-submit:active {
+    .shelter .submit:focus, .shelter .submit:active {
       color: var(--button-select-color);
       border: 2px solid var(--button-select-color);
       -webkit-transition: color 0.2s, border 0.2s;
