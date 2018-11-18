@@ -27,14 +27,20 @@ randify.strPhrase = (destination,activityType,activity) => {
 
   const result = arrPhrase.reduce((accum,elem) => {
     switch (elem) {
-      case 1:
-        console.log(activity);
-        accum = accum + activity;
+      case "^":
+        accum += activity;
         break;
-      case 2:
-        console.log(activity);
-        accum = accum + destination;
+      case "@":
+        accum += destination;
         break;
+      case "%":
+        accum += objDestInfo[destination].country;
+        break;
+      case "(":
+        accum += rsltPrinter.frmtNum(objDestInfo[destination].population);
+        break;
+      case ")":
+        accum += objDestInfo[destination].censusYear;
       default:
         accum += elem;
         break;
@@ -86,7 +92,7 @@ rsltPrinter.pasteHTML = (clipboardItem,htmlTag) => {
 // Generates the result section and append to DOM
 rsltPrinter.genResults = (destination, activityType, activity) => {
   const genHeader = destination;
-  const genInfo = `${destination} is a beautiful place in ${objDestInfo[destination].country}. It has a population of ${rsltPrinter.frmtNum(objDestInfo[destination].population)} (as of ${objDestInfo[destination].censusYear}), perfect for your love of ${app.userDensity} locations.`;
+  const genInfo = randify.strPhrase(destination,"info","");
   const genAct = randify.strPhrase(destination,activityType,activity);
   $(".results").find(".wrapper").empty();
   rsltPrinter.pasteHTML(genHeader, "h2");
@@ -178,9 +184,12 @@ app.init = () => {
       // Case 1: Suggest a staycation because the user is lazy.
       case 1:
         app.rsltDestination = "Staycation";
-        app.userActivity = randify.objKey(objDestInfo.Staycation.activities);
+        app.userActivity = randify.objKey(objDestInfo[app.rsltDestination].activities);
         app.getActivity();
-        rsltPrinter.genResults(app.rsltDestination, app.userActivity, app.rsltActivity);
+        $(".results").find(".wrapper").empty();
+        rsltPrinter.pasteHTML(app.rsltDestination, "h2");
+        rsltPrinter.pasteHTML(objDestInfo[app.rsltDestination].country, "p");
+        rsltPrinter.pasteHTML(app.rsltActivity, "p");
         $(".results").removeClass("hide");
         behaviour.nextSection("result");
         break;

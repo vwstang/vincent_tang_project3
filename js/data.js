@@ -60,14 +60,14 @@ const objDestInfo = {
     censusYear: 2018,
     activities: {
       sightseeing: [
-        "hksight1",
-        "hksight2",
-        "hksight3"
+        "Victoria Peak",
+        "Tian Tan Buddha",
+        "Dragon's Back"
       ],
       food: [
-        "hkfood1",
-        "hkfood2",
-        "hkfood3"
+        "dim sum (Chinese appetizers)",
+        "siu ngo (roasted goose)",
+        "bow jai faan (clay pot rice)"
       ]
     }
   },
@@ -173,15 +173,15 @@ const objDestInfo = {
     }
   },
   Staycation: {
-    country: "the safety and comfort of your own home",
-    population: "your family members",
+    country: "Since you're so darn indecisive, I suggest you stay in the safety and comfort of your own home.",
+    population: "1",
     censusYear: "today",
     activities: {
       sightseeing: [
-        "watch TV",
-        "play video games",
-        "play with your dog",
-        "play with your cat"
+        "Just stay at home and watch some TV because you have lots of shows to catch up on, probably.",
+        "Go play some video games, or read a book, or invite some friends over to play some board games.",
+        "Your dog needs some love and attention, and belly rubs. Don't forget the belly rubs.",
+        "Your cat may or may not need your attention. Make sure to double check for any glass objects on any edges of high places. You might find them broken on the ground below."
       ],
       food: [
         "Might as well microwave yourself some Kraft Dinner and call it a night.",
@@ -211,23 +211,39 @@ const objDestInfo = {
     population: 2022044,
     censusYear: 2016,
     activities: {
-      sightseeing: ["place1", "place2"],
-      food: ["food1", "food2"]
+      sightseeing: [
+        "Kings Park",
+        "Fremantle Markets",
+        "Penguin Island"
+      ],
+      food: [
+        "kangaroo meat",
+        "vegemite (vegetable, yeast extract, spice additives mixed into a paste as bread spread)",
+        "barramundi (fish)"
+      ]
     }
   },
   Oulu: {
-    country: "",
-    population: 0,
-    censusYear: 0,
+    country: "Finland",
+    population: 202753,
+    censusYear: 2018,
     activities: {
-      sightseeing: ["place1", "place2"],
-      food: ["food1", "food2"],
+      sightseeing: [
+        "Market Hall",
+        "Kiiminkijoki",
+        "Oulu Castle"
+      ],
+      food: [
+        "reindeer",
+        "rössypottu (Finnish dumpling and potato stew)",
+        "fried muikku (fish)"
+      ],
     }
   },
   "Kuala Lumpur": {
-    country: "",
-    population: 0,
-    censusYear: 0,
+    country: "Malaysia",
+    population: 1790000,
+    censusYear: 2017,
     activities: {
       sightseeing: [
         "Petronas Twin Towers",
@@ -250,8 +266,9 @@ const objDestInfo = {
         "Sass Pordoi",
         "Passo Sella"],
       food: [
-        "",
-        ""
+        "spaghetti",
+        "pretzels",
+        "polenta (boiled cornmeal)"
       ],
     }
   },
@@ -479,18 +496,25 @@ const objDestInfo = {
 };
 
 // 2D array of phrases to be randomized with food activities
+// Used with randify.strPhrase to generate coherent, albeit generic, sentences.
+// Token Characters replaced by randify.strPhrase
+// "@" - destination name
+// "%" - destination country
+// "(" - destination population
+// ")" - destination census year
+// "^" - activity
 const arrPhrases = {
   info: [
-    []
+    ["A place to check out in ", "%", " is ", "@", ". It has a population of ", "(", " as of ", ")", "."]
   ],
   sightseeing: [
-    [1, " is a cool place in ", 2,". Go check it out! Bring back some cool pictures."],
-    ["I heard that ", 1, " is worth visiting. It's totally Instagram worthy, so you can get some sick pics and post to your feed!"],
-    ["You haven't been to ", 2," if you haven't seen ", 1]
+    ["There is a cool place called ", "^", " in ", "@",". Go check it out! Bring back some cool pictures."],
+    ["I heard that ", "^", " is worth visiting. It's totally Instagram worthy, so you can get some sick pics and post to your feed!"],
+    ["You haven't been to ", "@"," if you haven't seen ", "^", "."]
   ],
   food: [
-    ["If you've ever heard of ", 1, ", then you're in luck, because it's something you can easily find in ", 2, "."],
-    ["As for food and drinks, you HAVE to go try ", 1, " when you're there. Trust me, it'll knock your socks off!"],
-    ["When I went to ", 2, " back in [INSERT NON-EXISTENT DATE OF TRIP], I really enjoyed ", 1, ". You should definitely get it on your trip there."]
+    ["If you've ever heard of ", "^", ", then you're in luck, because it's something you can easily find in ", "@", "."],
+    ["As for food and drinks, you HAVE to go try ", "^", " when you're there. Trust me, it'll knock your socks off!"],
+    ["When I went to ", "@", " back in [INSERT NON-EXISTENT DATE OF TRIP], I really enjoyed ", "^", ". You should definitely get it on your trip there."]
   ]
 };
